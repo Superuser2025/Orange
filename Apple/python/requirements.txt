@@ -1,0 +1,13 @@
+# Core GUI Framework
+PyQt6>=6.6.0
+PyQt6-WebEngine>=6.6.0
+
+# Data Visualization
+matplotlib>=3.8.0
+
+# MT5 Integration
+MetaTrader5>=5.0.45
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0

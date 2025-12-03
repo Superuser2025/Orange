@@ -1,0 +1,53 @@
+2025-12-01 16:42:34 | [32mINFO[0m | AppleTrader | [CONNECTION] ✓ Connected to MT5 - Account: 68263159
+2025-12-01 16:42:34 | [32mINFO[0m | AppleTrader | [CONNECTION]   Server: RoboForex-Pro
+2025-12-01 16:42:34 | [32mINFO[0m | AppleTrader | [CONNECTION]   Balance: 11306.12 USD
+2025-12-01 16:42:35 | [32mINFO[0m | AppleTrader | ════════════════════════════════════════════════════════════
+2025-12-01 16:42:35 | [32mINFO[0m | AppleTrader |   AppleTrader Pro v1.0.0
+2025-12-01 16:42:35 | [32mINFO[0m | AppleTrader |   Institutional Trading Platform
+2025-12-01 16:42:35 | [32mINFO[0m | AppleTrader | ════════════════════════════════════════════════════════════
+2025-12-01 16:42:35 | [32mINFO[0m | AppleTrader | ✓ Qt Application initialized
+2025-12-01 16:42:38 | [32mINFO[0m | AppleTrader | Controls panel initialized
+2025-12-01 16:42:38 | [32mINFO[0m | AppleTrader | ✓ MT5 connection established: TerminalInfo(community_account=True, community_connection=True, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=True, build=5430, maxbars=100000, codepage=0, ping_last=13332, community_balance=0.0, retransmission=13.61186480544188, company='RoboForex Ltd', name='RoboForex MT5 Terminal', language='English', path='C:\\Program Files\\Robo MT5 Angela', data_path='C:\\Users\\Shukra\\AppData\\Roaming\\MetaQuotes\\Terminal\\D80F6A7780D6E8F57AE2A0827BF4AF18', commondata_path='C:\\Users\\Shukra\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-12-01 16:42:38 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD H4
+2025-12-01 16:42:38 | [32mINFO[0m | AppleTrader | Chart initialized with 100 historical candles
+2025-12-01 16:42:39 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | Commentary panel initialized with live updates
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | ML panel initialized
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | Dashboard panel initialized
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | Market Drivers widget initialized
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | Orders panel initialized
+2025-12-01 16:42:39 | DEBUG    | AppleTrader | Timers initialized
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | [CONNECTION] ✓ Connected to MT5 - Account: 68263159
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | [CONNECTION]   Server: RoboForex-Pro
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | [CONNECTION]   Balance: 11306.12 USD
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | ✓ MT5 connection established
+2025-12-01 16:42:39 | [32mINFO[0m | AppleTrader | Main window initialized
+2025-12-01 16:42:40 | [32mINFO[0m | AppleTrader | ✓ Main window created
+2025-12-01 16:42:40 | [32mINFO[0m | AppleTrader | ✓ Application ready
+2025-12-01 16:42:40 | [32mINFO[0m | AppleTrader | 
+2025-12-01 16:42:40 | [32mINFO[0m | AppleTrader | → Connect to MT5 and attach AppleTrader EA to start trading
+2025-12-01 16:42:40 | [32mINFO[0m | AppleTrader | 
+2025-12-01 16:42:49 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-01 16:42:49 | DEBUG    | AppleTrader | Data manager updated at 2025-12-01 18:42:48
+2025-12-01 16:42:49 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-01 16:42:59 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-01 16:42:59 | DEBUG    | AppleTrader | Data manager updated at 2025-12-01 18:42:58
+2025-12-01 16:42:59 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-01 16:43:04 | [32mINFO[0m | AppleTrader | Timeframe changed to: M15
+2025-12-01 16:43:04 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD M15
+2025-12-01 16:43:04 | [32mINFO[0m | AppleTrader | Timeframe changed to: M15
+2025-12-01 16:43:09 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-01 16:43:09 | DEBUG    | AppleTrader | Data manager updated at 2025-12-01 18:43:08
+2025-12-01 16:43:09 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-01 16:43:19 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-01 16:43:19 | DEBUG    | AppleTrader | Data manager updated at 2025-12-01 18:43:18
+2025-12-01 16:43:19 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-01 16:43:29 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-01 16:43:29 | DEBUG    | AppleTrader | Data manager updated at 2025-12-01 18:43:29
+2025-12-01 16:43:29 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-01 16:43:39 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-01 16:43:39 | DEBUG    | AppleTrader | Data manager updated at 2025-12-01 18:43:38
+2025-12-01 16:43:39 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-01 16:43:47 | [32mINFO[0m | AppleTrader | Application shutting down...
+2025-12-01 16:43:47 | [32mINFO[0m | AppleTrader | [CONNECTION] MT5 connection closed
+2025-12-01 16:43:47 | [32mINFO[0m | AppleTrader | Application closed

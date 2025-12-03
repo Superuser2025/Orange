@@ -1,0 +1,26 @@
+{
+  "trading": {
+    "default_risk_percent": 0.5,
+    "require_confirmation": true,
+    "use_volume_filter": true,
+    "use_spread_filter": true,
+    "use_mtf_confirmation": true,
+    "use_session_filter": true,
+    "use_news_filter": true,
+    "use_ml_filter": false
+  },
+  "ml": {
+    "min_probability": 0.6,
+    "min_confidence": 0.5,
+    "auto_export_enabled": true
+  },
+  "alerts": {
+    "enable_desktop_notifications": true,
+    "enable_sound_alerts": true,
+    "sound_volume": 0.7,
+    "alert_on_pattern": true,
+    "alert_on_trade_entry": true,
+    "alert_on_trade_exit": true,
+    "alert_on_ml_signal": true
+  }
+}

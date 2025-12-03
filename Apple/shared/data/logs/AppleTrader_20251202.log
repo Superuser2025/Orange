@@ -1,0 +1,1258 @@
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader | [CONNECTION] ✓ Connected to MT5 - Account: 68263159
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader | [CONNECTION]   Server: RoboForex-Pro
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader | [CONNECTION]   Balance: 11306.12 USD
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader | ════════════════════════════════════════════════════════════
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader |   AppleTrader Pro v1.0.0
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader |   Institutional Trading Platform
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader | ════════════════════════════════════════════════════════════
+2025-12-02 20:44:53 | [32mINFO[0m | AppleTrader | ✓ Qt Application initialized
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | Controls panel initialized
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | ✓ MT5 connection established: TerminalInfo(community_account=True, community_connection=True, connected=True, dlls_allowed=False, trade_allowed=True, tradeapi_disabled=False, email_enabled=False, ftp_enabled=False, notifications_enabled=False, mqid=True, build=5430, maxbars=100000, codepage=0, ping_last=14660, community_balance=0.0, retransmission=0.036491679770305145, company='RoboForex Ltd', name='RoboForex MT5 Terminal', language='English', path='C:\\Program Files\\Robo MT5 Angela', data_path='C:\\Users\\Shukra\\AppData\\Roaming\\MetaQuotes\\Terminal\\D80F6A7780D6E8F57AE2A0827BF4AF18', commondata_path='C:\\Users\\Shukra\\AppData\\Roaming\\MetaQuotes\\Terminal\\Common')
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD H4
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | Chart initialized with 100 historical candles
+2025-12-02 20:44:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | Commentary panel initialized with live updates
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | ML panel initialized
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | Dashboard panel initialized
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | Market Drivers widget initialized
+2025-12-02 20:44:54 | [32mINFO[0m | AppleTrader | Orders panel initialized
+2025-12-02 20:44:54 | DEBUG    | AppleTrader | Timers initialized
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | [CONNECTION] ✓ Connected to MT5 - Account: 68263159
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | [CONNECTION]   Server: RoboForex-Pro
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | [CONNECTION]   Balance: 11306.12 USD
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | ✓ MT5 connection established
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | Main window initialized
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | ✓ Main window created
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | ✓ Application ready
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | 
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | → Connect to MT5 and attach AppleTrader EA to start trading
+2025-12-02 20:44:55 | [32mINFO[0m | AppleTrader | 
+2025-12-02 20:45:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:45:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:44:59
+2025-12-02 20:45:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:45:13 | [32mINFO[0m | AppleTrader | Timeframe changed to: M5
+2025-12-02 20:45:13 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD M5
+2025-12-02 20:45:14 | [32mINFO[0m | AppleTrader | Timeframe changed to: M5
+2025-12-02 20:45:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:45:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:45:09
+2025-12-02 20:45:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:45:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:45:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:45:19
+2025-12-02 20:45:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:45:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:45:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:45:34
+2025-12-02 20:45:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:45:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:45:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:45:39
+2025-12-02 20:45:44 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:45:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:45:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:45:49
+2025-12-02 20:45:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:46:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:46:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:45:59
+2025-12-02 20:46:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:46:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:46:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:46:09
+2025-12-02 20:46:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:46:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:46:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:46:19
+2025-12-02 20:46:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:46:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:46:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:46:29
+2025-12-02 20:46:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:46:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:46:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:46:39
+2025-12-02 20:46:44 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:46:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:46:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:46:49
+2025-12-02 20:46:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:47:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:47:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:46:59
+2025-12-02 20:47:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:47:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:47:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:47:09
+2025-12-02 20:47:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:47:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:47:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:47:21
+2025-12-02 20:47:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:47:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:47:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:47:33
+2025-12-02 20:47:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:47:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:47:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:47:44
+2025-12-02 20:47:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:47:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:47:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:47:54
+2025-12-02 20:47:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:48:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:48:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:48:04
+2025-12-02 20:48:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:48:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:48:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:48:09
+2025-12-02 20:48:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:48:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:48:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:48:20
+2025-12-02 20:48:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:48:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:48:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:48:29
+2025-12-02 20:48:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:48:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:48:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:48:39
+2025-12-02 20:48:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:48:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:48:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:48:49
+2025-12-02 20:48:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:49:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:49:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:48:59
+2025-12-02 20:49:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:49:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:49:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:49:09
+2025-12-02 20:49:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:49:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:49:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:49:19
+2025-12-02 20:49:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:49:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:49:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:49:33
+2025-12-02 20:49:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:49:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:49:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:49:39
+2025-12-02 20:49:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:49:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:49:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:49:49
+2025-12-02 20:49:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:50:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:50:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:49:59
+2025-12-02 20:50:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:50:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:50:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:50:09
+2025-12-02 20:50:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:50:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:50:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:50:19
+2025-12-02 20:50:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:50:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:50:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:50:29
+2025-12-02 20:50:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:50:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:50:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:50:42
+2025-12-02 20:50:44 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:50:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:50:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:50:49
+2025-12-02 20:50:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:51:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:51:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:50:59
+2025-12-02 20:51:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:51:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:51:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:51:09
+2025-12-02 20:51:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:51:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:51:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:51:19
+2025-12-02 20:51:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:51:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:51:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:51:34
+2025-12-02 20:51:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:51:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:51:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:51:39
+2025-12-02 20:51:44 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:51:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:51:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:51:52
+2025-12-02 20:51:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:52:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:52:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:51:59
+2025-12-02 20:52:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:52:10 | [32mINFO[0m | AppleTrader | Order requested: BUY
+2025-12-02 20:52:10 | [32mINFO[0m | AppleTrader | [COMMENTARY] 📈 Placing BUY order...
+2025-12-02 20:52:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:52:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:52:09
+2025-12-02 20:52:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:52:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:52:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:52:19
+2025-12-02 20:52:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:52:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:52:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:52:29
+2025-12-02 20:52:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:52:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:52:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:52:39
+2025-12-02 20:52:44 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:52:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:52:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:52:49
+2025-12-02 20:52:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:53:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:53:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:52:59
+2025-12-02 20:53:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:53:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:53:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:53:09
+2025-12-02 20:53:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:53:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:53:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:53:19
+2025-12-02 20:53:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:53:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:53:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:53:29
+2025-12-02 20:53:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:53:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:53:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:53:39
+2025-12-02 20:53:44 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:53:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:53:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:53:52
+2025-12-02 20:53:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:54:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:54:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:53:59
+2025-12-02 20:54:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:54:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:54:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:54:09
+2025-12-02 20:54:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:54:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:54:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:54:20
+2025-12-02 20:54:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:54:26 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for USDJPY M5
+2025-12-02 20:54:26 | [32mINFO[0m | AppleTrader | Symbol changed to: USDJPY
+2025-12-02 20:54:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:54:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:54:32
+2025-12-02 20:54:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:54:40 | [32mINFO[0m | AppleTrader | Timeframe changed to: M15
+2025-12-02 20:54:40 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD M15
+2025-12-02 20:54:40 | [32mINFO[0m | AppleTrader | Symbol changed to: EURUSD
+2025-12-02 20:54:40 | [32mINFO[0m | AppleTrader | Symbol updated to match EA: EURUSD
+2025-12-02 20:54:40 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD M15
+2025-12-02 20:54:40 | [32mINFO[0m | AppleTrader | Timeframe changed to: M15
+2025-12-02 20:54:44 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for USDJPY M15
+2025-12-02 20:54:45 | [32mINFO[0m | AppleTrader | Symbol changed to: USDJPY
+2025-12-02 20:54:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:54:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:54:42
+2025-12-02 20:54:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:54:47 | [32mINFO[0m | AppleTrader | Timeframe changed to: M5
+2025-12-02 20:54:47 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD M5
+2025-12-02 20:54:47 | [32mINFO[0m | AppleTrader | Symbol changed to: EURUSD
+2025-12-02 20:54:47 | [32mINFO[0m | AppleTrader | Symbol updated to match EA: EURUSD
+2025-12-02 20:54:47 | [32mINFO[0m | AppleTrader | ✓ Loaded 100 historical candles for EURUSD M5
+2025-12-02 20:54:47 | [32mINFO[0m | AppleTrader | Timeframe changed to: M5
+2025-12-02 20:54:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:54:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:54:52
+2025-12-02 20:54:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:54:57 | [32mINFO[0m | AppleTrader | [COMMENTARY] Commentary cleared
+2025-12-02 20:54:57 | [32mINFO[0m | AppleTrader | Commentary cleared by user
+2025-12-02 20:55:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:55:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:55:03
+2025-12-02 20:55:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:55:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:55:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:55:09
+2025-12-02 20:55:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:55:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:55:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:55:19
+2025-12-02 20:55:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:55:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:55:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:55:33
+2025-12-02 20:55:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:55:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:55:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:55:39
+2025-12-02 20:55:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:55:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:55:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:55:49
+2025-12-02 20:55:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:56:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:56:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:55:59
+2025-12-02 20:56:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:56:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:56:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:56:09
+2025-12-02 20:56:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:56:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:56:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:56:21
+2025-12-02 20:56:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:56:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:56:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:56:29
+2025-12-02 20:56:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:56:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:56:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:56:39
+2025-12-02 20:56:44 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:56:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:56:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:56:49
+2025-12-02 20:56:54 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:57:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:57:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:56:59
+2025-12-02 20:57:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:57:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:57:14 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:57:09
+2025-12-02 20:57:14 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:57:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:57:24 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:57:19
+2025-12-02 20:57:24 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:57:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:57:34 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:57:29
+2025-12-02 20:57:34 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:57:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:57:44 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:57:39
+2025-12-02 20:57:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:57:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:57:54 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:57:49
+2025-12-02 20:57:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:58:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:58:04 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:57:59
+2025-12-02 20:58:04 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:58:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:58:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:58:09
+2025-12-02 20:58:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:58:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:58:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:58:19
+2025-12-02 20:58:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:58:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:58:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:58:29
+2025-12-02 20:58:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:58:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:58:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:58:39
+2025-12-02 20:58:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:58:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:58:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:58:52
+2025-12-02 20:58:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:59:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:59:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:59:02
+2025-12-02 20:59:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:59:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:59:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:59:09
+2025-12-02 20:59:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:59:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:59:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:59:19
+2025-12-02 20:59:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:59:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:59:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:59:29
+2025-12-02 20:59:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:59:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:59:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:59:39
+2025-12-02 20:59:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 20:59:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 20:59:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 22:59:52
+2025-12-02 20:59:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:00:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:00:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:00:02
+2025-12-02 21:00:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:00:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:00:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:00:12
+2025-12-02 21:00:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:00:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:00:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:00:19
+2025-12-02 21:00:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:00:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:00:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:00:33
+2025-12-02 21:00:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:00:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:00:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:00:39
+2025-12-02 21:00:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:00:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:00:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:00:49
+2025-12-02 21:00:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:01:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:01:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:00:59
+2025-12-02 21:01:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:01:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:01:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:01:09
+2025-12-02 21:01:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:01:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:01:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:01:19
+2025-12-02 21:01:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:01:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:01:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:01:29
+2025-12-02 21:01:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:01:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:01:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:01:39
+2025-12-02 21:01:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:01:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:01:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:01:49
+2025-12-02 21:01:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:02:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:02:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:01:59
+2025-12-02 21:02:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:02:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:02:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:02:09
+2025-12-02 21:02:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:02:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:02:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:02:19
+2025-12-02 21:02:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:02:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:02:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:02:29
+2025-12-02 21:02:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:02:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:02:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:02:39
+2025-12-02 21:02:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:02:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:02:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:02:49
+2025-12-02 21:02:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:03:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:03:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:02:59
+2025-12-02 21:03:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:03:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:03:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:03:09
+2025-12-02 21:03:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:03:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:03:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:03:19
+2025-12-02 21:03:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:03:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:03:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:03:29
+2025-12-02 21:03:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:03:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:03:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:03:39
+2025-12-02 21:03:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:03:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:03:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:03:49
+2025-12-02 21:03:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:04:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:04:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:03:59
+2025-12-02 21:04:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:04:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:04:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:04:09
+2025-12-02 21:04:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:04:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:04:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:04:19
+2025-12-02 21:04:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:04:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:04:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:04:29
+2025-12-02 21:04:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:04:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:04:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:04:39
+2025-12-02 21:04:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:04:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:04:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:04:49
+2025-12-02 21:04:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:05:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:05:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:05:02
+2025-12-02 21:05:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:05:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:05:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:05:09
+2025-12-02 21:05:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:05:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:05:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:05:18
+2025-12-02 21:05:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:05:34 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:05:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:05:29
+2025-12-02 21:05:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:05:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:05:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:05:39
+2025-12-02 21:05:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:05:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:05:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:05:49
+2025-12-02 21:05:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:06:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:06:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:05:59
+2025-12-02 21:06:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:06:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:06:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:06:09
+2025-12-02 21:06:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:06:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:06:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:06:19
+2025-12-02 21:06:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:06:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:06:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:06:32
+2025-12-02 21:06:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:06:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:06:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:06:43
+2025-12-02 21:06:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:06:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:06:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:06:49
+2025-12-02 21:06:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:07:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:07:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:06:59
+2025-12-02 21:07:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:07:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:07:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:07:09
+2025-12-02 21:07:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:07:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:07:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:07:20
+2025-12-02 21:07:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:07:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:07:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:07:29
+2025-12-02 21:07:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:07:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:07:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:07:39
+2025-12-02 21:07:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:07:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:07:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:07:49
+2025-12-02 21:07:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:08:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:08:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:08:00
+2025-12-02 21:08:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:08:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:08:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:08:12
+2025-12-02 21:08:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:08:24 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:08:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:08:18
+2025-12-02 21:08:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:08:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:08:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:08:29
+2025-12-02 21:08:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:08:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:08:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:08:39
+2025-12-02 21:08:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:08:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:08:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:08:48
+2025-12-02 21:08:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:09:04 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:09:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:09:02
+2025-12-02 21:09:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:09:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:09:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:09:08
+2025-12-02 21:09:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:09:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:09:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:09:19
+2025-12-02 21:09:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:09:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:09:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:09:29
+2025-12-02 21:09:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:09:44 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:09:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:09:40
+2025-12-02 21:09:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:09:54 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:09:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:09:53
+2025-12-02 21:09:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:10:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:10:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:09:59
+2025-12-02 21:10:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:10:14 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:10:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:10:09
+2025-12-02 21:10:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:10:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:10:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:10:19
+2025-12-02 21:10:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:10:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:10:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:10:29
+2025-12-02 21:10:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:10:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:10:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:10:39
+2025-12-02 21:10:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:10:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:10:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:10:49
+2025-12-02 21:10:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:11:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:11:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:11:00
+2025-12-02 21:11:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:11:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:11:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:11:09
+2025-12-02 21:11:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:11:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:11:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:11:19
+2025-12-02 21:11:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:11:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:11:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:11:34
+2025-12-02 21:11:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:11:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:11:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:11:39
+2025-12-02 21:11:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:11:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:11:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:11:49
+2025-12-02 21:11:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:12:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:12:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:11:59
+2025-12-02 21:12:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:12:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:12:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:12:14
+2025-12-02 21:12:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:12:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:12:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:12:19
+2025-12-02 21:12:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:12:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:12:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:12:32
+2025-12-02 21:12:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:12:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:12:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:12:42
+2025-12-02 21:12:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:12:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:12:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:12:53
+2025-12-02 21:12:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:13:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:13:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:13:03
+2025-12-02 21:13:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:13:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:13:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:13:09
+2025-12-02 21:13:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:13:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:13:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:13:21
+2025-12-02 21:13:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:13:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:13:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:13:29
+2025-12-02 21:13:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:13:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:13:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:13:43
+2025-12-02 21:13:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:13:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:13:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:13:49
+2025-12-02 21:13:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:14:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:14:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:13:59
+2025-12-02 21:14:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:14:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:14:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:14:07
+2025-12-02 21:14:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:14:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:14:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:14:19
+2025-12-02 21:14:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:14:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:14:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:14:29
+2025-12-02 21:14:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:14:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:14:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:14:38
+2025-12-02 21:14:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:14:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:14:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:14:49
+2025-12-02 21:14:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:15:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:15:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:14:59
+2025-12-02 21:15:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:15:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:15:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:15:09
+2025-12-02 21:15:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:15:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:15:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:15:22
+2025-12-02 21:15:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:15:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:15:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:15:28
+2025-12-02 21:15:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:15:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:15:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:15:39
+2025-12-02 21:15:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:15:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:15:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:15:49
+2025-12-02 21:15:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:16:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:16:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:15:58
+2025-12-02 21:16:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:16:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:16:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:16:12
+2025-12-02 21:16:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:16:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:16:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:16:19
+2025-12-02 21:16:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:16:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:16:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:16:29
+2025-12-02 21:16:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:16:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:16:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:16:38
+2025-12-02 21:16:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:16:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:16:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:16:54
+2025-12-02 21:16:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:17:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:17:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:17:04
+2025-12-02 21:17:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:17:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:17:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:17:08
+2025-12-02 21:17:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:17:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:17:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:17:18
+2025-12-02 21:17:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:17:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:17:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:17:27
+2025-12-02 21:17:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:17:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:17:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:17:41
+2025-12-02 21:17:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:17:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:17:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:17:49
+2025-12-02 21:17:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:18:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:18:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:18:01
+2025-12-02 21:18:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:18:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:18:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:18:09
+2025-12-02 21:18:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:18:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:18:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:18:19
+2025-12-02 21:18:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:18:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:18:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:18:27
+2025-12-02 21:18:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:18:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:18:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:18:39
+2025-12-02 21:18:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:18:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:18:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:18:49
+2025-12-02 21:18:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:19:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:19:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:19:00
+2025-12-02 21:19:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:19:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:19:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:19:09
+2025-12-02 21:19:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:19:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:19:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:19:24
+2025-12-02 21:19:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:19:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:19:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:19:29
+2025-12-02 21:19:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:19:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:19:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:19:39
+2025-12-02 21:19:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:19:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:19:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:19:47
+2025-12-02 21:19:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:20:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:20:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:20:00
+2025-12-02 21:20:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:20:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:20:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:20:15
+2025-12-02 21:20:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:20:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:20:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:20:19
+2025-12-02 21:20:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:20:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:20:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:20:28
+2025-12-02 21:20:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:20:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:20:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:20:39
+2025-12-02 21:20:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:20:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:20:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:20:49
+2025-12-02 21:20:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:21:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:21:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:20:59
+2025-12-02 21:21:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:21:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:21:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:21:10
+2025-12-02 21:21:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:21:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:21:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:21:18
+2025-12-02 21:21:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:21:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:21:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:21:27
+2025-12-02 21:21:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:21:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:21:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:21:44
+2025-12-02 21:21:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:21:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:21:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:21:49
+2025-12-02 21:21:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:22:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:22:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:22:00
+2025-12-02 21:22:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:22:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:22:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:22:09
+2025-12-02 21:22:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:22:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:22:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:22:19
+2025-12-02 21:22:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:22:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:22:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:22:29
+2025-12-02 21:22:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:22:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:22:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:22:44
+2025-12-02 21:22:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:22:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:22:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:22:49
+2025-12-02 21:22:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:23:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:23:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:22:59
+2025-12-02 21:23:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:23:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:23:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:23:03
+2025-12-02 21:23:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:23:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:23:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:23:16
+2025-12-02 21:23:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:23:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:23:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:23:29
+2025-12-02 21:23:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:23:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:23:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:23:38
+2025-12-02 21:23:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:23:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:23:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:23:49
+2025-12-02 21:23:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:24:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:24:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:23:57
+2025-12-02 21:24:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:24:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:24:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:24:10
+2025-12-02 21:24:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:24:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:24:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:24:20
+2025-12-02 21:24:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:24:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:24:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:24:33
+2025-12-02 21:24:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:24:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:24:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:24:39
+2025-12-02 21:24:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:24:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:24:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:24:49
+2025-12-02 21:24:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:25:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:25:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:25:03
+2025-12-02 21:25:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:25:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:25:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:25:09
+2025-12-02 21:25:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:25:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:25:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:25:19
+2025-12-02 21:25:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:25:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:25:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:25:29
+2025-12-02 21:25:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:25:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:25:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:25:40
+2025-12-02 21:25:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:25:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:25:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:25:51
+2025-12-02 21:25:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:26:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:26:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:25:59
+2025-12-02 21:26:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:26:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:26:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:26:09
+2025-12-02 21:26:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:26:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:26:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:26:19
+2025-12-02 21:26:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:26:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:26:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:26:27
+2025-12-02 21:26:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:26:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:26:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:26:40
+2025-12-02 21:26:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:26:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:26:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:26:51
+2025-12-02 21:26:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:27:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:27:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:27:02
+2025-12-02 21:27:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:27:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:27:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:27:09
+2025-12-02 21:27:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:27:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:27:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:27:19
+2025-12-02 21:27:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:27:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:27:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:27:33
+2025-12-02 21:27:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:27:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:27:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:27:45
+2025-12-02 21:27:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:27:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:27:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:27:49
+2025-12-02 21:27:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:28:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:28:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:28:00
+2025-12-02 21:28:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:28:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:28:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:28:09
+2025-12-02 21:28:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:28:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:28:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:28:17
+2025-12-02 21:28:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:28:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:28:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:28:29
+2025-12-02 21:28:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:28:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:28:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:28:39
+2025-12-02 21:28:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:28:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:28:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:28:48
+2025-12-02 21:28:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:29:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:29:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:29:00
+2025-12-02 21:29:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:29:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:29:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:29:10
+2025-12-02 21:29:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:29:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:29:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:29:18
+2025-12-02 21:29:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:29:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:29:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:29:29
+2025-12-02 21:29:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:29:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:29:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:29:39
+2025-12-02 21:29:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:29:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:29:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:29:53
+2025-12-02 21:29:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:30:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:30:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:30:03
+2025-12-02 21:30:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:30:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:30:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:30:09
+2025-12-02 21:30:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:30:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:30:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:30:19
+2025-12-02 21:30:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:30:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:30:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:30:29
+2025-12-02 21:30:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:30:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:30:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:30:41
+2025-12-02 21:30:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:30:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:30:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:30:48
+2025-12-02 21:30:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:31:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:31:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:31:00
+2025-12-02 21:31:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:31:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:31:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:31:08
+2025-12-02 21:31:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:31:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:31:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:31:24
+2025-12-02 21:31:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:31:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:31:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:31:28
+2025-12-02 21:31:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:31:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:31:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:31:39
+2025-12-02 21:31:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:31:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:31:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:31:47
+2025-12-02 21:31:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:32:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:32:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:32:00
+2025-12-02 21:32:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:32:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:32:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:32:15
+2025-12-02 21:32:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:32:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:32:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:32:18
+2025-12-02 21:32:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:32:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:32:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:32:29
+2025-12-02 21:32:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:32:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:32:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:32:39
+2025-12-02 21:32:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:32:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:32:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:32:47
+2025-12-02 21:32:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:33:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:33:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:32:57
+2025-12-02 21:33:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:33:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:33:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:33:08
+2025-12-02 21:33:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:33:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:33:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:33:19
+2025-12-02 21:33:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:33:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:33:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:33:29
+2025-12-02 21:33:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:33:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:33:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:33:43
+2025-12-02 21:33:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:33:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:33:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:33:47
+2025-12-02 21:33:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:34:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:34:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:34:02
+2025-12-02 21:34:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:34:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:34:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:34:09
+2025-12-02 21:34:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:34:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:34:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:34:18
+2025-12-02 21:34:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:34:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:34:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:34:29
+2025-12-02 21:34:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:34:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:34:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:34:39
+2025-12-02 21:34:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:34:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:34:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:34:52
+2025-12-02 21:34:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:35:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:35:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:34:57
+2025-12-02 21:35:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:35:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:35:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:35:09
+2025-12-02 21:35:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:35:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:35:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:35:18
+2025-12-02 21:35:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:35:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:35:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:35:30
+2025-12-02 21:35:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:35:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:35:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:35:38
+2025-12-02 21:35:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:35:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:35:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:35:48
+2025-12-02 21:35:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:36:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:36:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:35:59
+2025-12-02 21:36:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:36:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:36:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:36:09
+2025-12-02 21:36:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:36:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:36:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:36:19
+2025-12-02 21:36:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:36:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:36:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:36:29
+2025-12-02 21:36:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:36:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:36:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:36:41
+2025-12-02 21:36:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:36:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:36:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:36:54
+2025-12-02 21:36:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:37:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:37:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:36:59
+2025-12-02 21:37:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:37:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:37:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:37:09
+2025-12-02 21:37:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:37:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:37:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:37:21
+2025-12-02 21:37:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:37:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:37:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:37:33
+2025-12-02 21:37:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:37:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:37:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:37:45
+2025-12-02 21:37:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:37:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:37:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:37:49
+2025-12-02 21:37:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:38:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:38:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:37:59
+2025-12-02 21:38:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:38:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:38:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:38:09
+2025-12-02 21:38:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:38:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:38:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:38:19
+2025-12-02 21:38:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:38:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:38:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:38:29
+2025-12-02 21:38:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:38:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:38:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:38:39
+2025-12-02 21:38:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:38:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:38:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:38:48
+2025-12-02 21:38:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:39:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:39:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:39:01
+2025-12-02 21:39:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:39:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:39:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:39:09
+2025-12-02 21:39:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:39:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:39:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:39:19
+2025-12-02 21:39:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:39:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:39:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:39:29
+2025-12-02 21:39:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:39:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:39:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:39:39
+2025-12-02 21:39:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:39:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:39:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:39:47
+2025-12-02 21:39:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:40:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:40:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:40:04
+2025-12-02 21:40:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:40:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:40:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:40:09
+2025-12-02 21:40:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:40:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:40:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:40:19
+2025-12-02 21:40:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:40:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:40:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:40:29
+2025-12-02 21:40:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:40:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:40:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:40:41
+2025-12-02 21:40:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:40:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:40:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:40:49
+2025-12-02 21:40:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:41:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:41:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:41:00
+2025-12-02 21:41:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:41:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:41:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:41:10
+2025-12-02 21:41:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:41:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:41:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:41:19
+2025-12-02 21:41:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:41:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:41:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:41:29
+2025-12-02 21:41:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:41:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:41:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:41:38
+2025-12-02 21:41:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:41:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:41:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:41:49
+2025-12-02 21:41:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:42:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:42:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:42:00
+2025-12-02 21:42:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:42:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:42:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:42:09
+2025-12-02 21:42:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:42:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:42:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:42:16
+2025-12-02 21:42:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:42:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:42:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:42:29
+2025-12-02 21:42:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:42:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:42:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:42:38
+2025-12-02 21:42:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:42:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:42:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:42:49
+2025-12-02 21:42:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:43:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:43:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:43:00
+2025-12-02 21:43:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:43:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:43:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:43:09
+2025-12-02 21:43:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:43:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:43:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:43:19
+2025-12-02 21:43:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:43:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:43:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:43:29
+2025-12-02 21:43:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:43:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:43:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:43:39
+2025-12-02 21:43:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:43:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:43:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:43:48
+2025-12-02 21:43:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:44:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:44:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:44:00
+2025-12-02 21:44:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:44:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:44:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:44:08
+2025-12-02 21:44:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:44:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:44:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:44:19
+2025-12-02 21:44:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:44:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:44:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:44:29
+2025-12-02 21:44:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:44:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:44:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:44:39
+2025-12-02 21:44:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:44:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:44:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:44:49
+2025-12-02 21:44:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:45:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:45:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:44:59
+2025-12-02 21:45:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:45:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:45:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:45:13
+2025-12-02 21:45:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:45:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:45:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:45:18
+2025-12-02 21:45:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:45:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:45:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:45:29
+2025-12-02 21:45:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:45:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:45:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:45:38
+2025-12-02 21:45:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:45:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:45:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:45:49
+2025-12-02 21:45:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:46:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:46:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:46:00
+2025-12-02 21:46:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:46:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:46:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:46:13
+2025-12-02 21:46:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:46:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:46:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:46:19
+2025-12-02 21:46:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:46:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:46:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:46:29
+2025-12-02 21:46:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:46:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:46:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:46:39
+2025-12-02 21:46:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:46:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:46:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:46:48
+2025-12-02 21:46:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:47:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:47:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:47:02
+2025-12-02 21:47:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:47:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:47:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:47:08
+2025-12-02 21:47:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:47:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:47:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:47:19
+2025-12-02 21:47:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:47:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:47:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:47:29
+2025-12-02 21:47:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:47:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:47:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:47:39
+2025-12-02 21:47:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:47:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:47:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:47:48
+2025-12-02 21:47:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:48:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:48:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:48:00
+2025-12-02 21:48:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:48:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:48:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:48:09
+2025-12-02 21:48:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:48:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:48:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:48:17
+2025-12-02 21:48:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:48:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:48:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:48:31
+2025-12-02 21:48:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:48:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:48:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:48:38
+2025-12-02 21:48:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:48:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:48:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:48:49
+2025-12-02 21:48:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:49:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:49:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:49:00
+2025-12-02 21:49:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:49:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:49:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:49:09
+2025-12-02 21:49:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:49:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:49:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:49:19
+2025-12-02 21:49:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:49:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:49:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:49:32
+2025-12-02 21:49:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:49:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:49:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:49:39
+2025-12-02 21:49:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:49:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:49:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:49:49
+2025-12-02 21:49:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:50:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:50:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:49:59
+2025-12-02 21:50:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:50:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:50:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:50:09
+2025-12-02 21:50:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:50:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:50:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:50:19
+2025-12-02 21:50:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:50:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:50:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:50:29
+2025-12-02 21:50:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:50:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:50:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:50:39
+2025-12-02 21:50:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:50:55 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:50:55 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:50:51
+2025-12-02 21:50:55 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:51:05 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:51:05 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:51:02
+2025-12-02 21:51:05 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:51:15 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:51:15 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:51:09
+2025-12-02 21:51:15 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:51:25 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:51:25 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:51:19
+2025-12-02 21:51:25 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:51:35 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:51:35 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:51:29
+2025-12-02 21:51:35 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:51:45 | DEBUG    | AppleTrader | Live commentary updated
+2025-12-02 21:51:45 | DEBUG    | AppleTrader | Data manager updated at 2025-12-02 23:51:39
+2025-12-02 21:51:45 | DEBUG    | AppleTrader | Market data updated from IPC file
+2025-12-02 21:51:50 | [32mINFO[0m | AppleTrader | Application shutting down...
+2025-12-02 21:51:50 | [32mINFO[0m | AppleTrader | [CONNECTION] MT5 connection closed
+2025-12-02 21:51:50 | [32mINFO[0m | AppleTrader | Application closed
