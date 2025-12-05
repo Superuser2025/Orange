@@ -15,6 +15,7 @@ from utils.logger import logger
 from core.mt5_connector import connector
 from core.data_manager import data_manager
 from core.proxy_trader import proxy_trader  # GUERILLA TRADER
+from core.command_manager import command_manager  # Python → EA commands
 
 # Import panels
 from gui.chart_panel_matplotlib import ChartPanel
@@ -451,26 +452,155 @@ class MainWindow(QMainWindow):
         )
 
     def on_setting_changed(self, setting_name: str, value):
-        """Handle setting change from controls panel"""
+        """Handle setting change from controls panel and send to EA"""
         logger.info(f"Setting changed: {setting_name} = {value}")
 
-        # Handle GUERILLA TRADER orders
+        # Handle GUERILLA TRADER orders (instant execution - no EA involved)
         if setting_name == 'guerilla_order':
             self.handle_guerilla_order(value)
             return
 
-        # Update timers if update speed changed
+        # Update timers if update speed changed (Python app only)
         if setting_name == 'update_speed':
             self.market_data_timer.setInterval(settings.app.market_data_update_interval)
             self.ui_timer.setInterval(settings.app.ui_refresh_interval)
             self.statusBar.showMessage(f"Update speed: {settings.app.get_update_speed_description()}", 3000)
+            return
 
-        # Add commentary for critical settings
+        # ============================================================
+        # SEND COMMANDS TO EA (Bidirectional IPC)
+        # ============================================================
+
+        # Trading Enable/Disable Toggle
         if setting_name == 'enable_trading':
-            if value:
-                self.commentary_panel.add_comment("⚠️ AUTO TRADING ENABLED - EA will execute trades!", 1)
+            success = command_manager.set_trading_enabled(value)
+            if success:
+                if value:
+                    self.commentary_panel.add_comment("🟢 AUTO TRADING ENABLED - EA will execute trades!", 1)
+                    self.statusBar.showMessage("✓ EA: Auto trading enabled", 3000)
+                else:
+                    self.commentary_panel.add_comment("🔴 INDICATOR MODE - EA trading disabled", 1)
+                    self.statusBar.showMessage("✓ EA: Indicator mode (no trading)", 3000)
             else:
-                self.commentary_panel.add_comment("✓ INDICATOR MODE - No trading", 3)
+                self.commentary_panel.add_comment("❌ Failed to send command to EA", 1)
+            return
+
+        # Risk Management Slider
+        if setting_name == 'risk_percent':
+            success = command_manager.set_risk_percent(value)
+            if success:
+                self.commentary_panel.add_comment(f"📊 Risk updated: {value:.1f}% per trade", 3)
+                self.statusBar.showMessage(f"✓ EA: Risk set to {value:.1f}%", 3000)
+            else:
+                self.commentary_panel.add_comment("❌ Failed to update risk setting", 1)
+            return
+
+        # ============================================================
+        # INSTITUTIONAL FILTERS
+        # ============================================================
+
+        if setting_name == 'use_volume_filter':
+            success = command_manager.set_filter('use_volume_filter', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"📊 Volume filter {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: Volume filter {status}", 3000)
+            return
+
+        if setting_name == 'use_spread_filter':
+            success = command_manager.set_filter('use_spread_filter', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"📏 Spread filter {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: Spread filter {status}", 3000)
+            return
+
+        if setting_name == 'use_mtf_filter':
+            success = command_manager.set_filter('use_mtf_confirmation', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"📈 Multi-timeframe confirmation {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: MTF filter {status}", 3000)
+            return
+
+        if setting_name == 'use_session_filter':
+            success = command_manager.set_filter('use_session_filter', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"🕐 Session filter {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: Session filter {status}", 3000)
+            return
+
+        if setting_name == 'use_news_filter':
+            success = command_manager.set_filter('use_news_filter', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"📰 News filter {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: News filter {status}", 3000)
+            return
+
+        # ============================================================
+        # SMC (SMART MONEY CONCEPTS)
+        # ============================================================
+
+        if setting_name == 'use_liquidity':
+            success = command_manager.set_smc_feature('use_liquidity', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"💧 Liquidity sweep detection {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: Liquidity analysis {status}", 3000)
+            return
+
+        if setting_name == 'use_order_blocks':
+            success = command_manager.set_smc_feature('use_order_blocks', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"📦 Order block detection {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: Order blocks {status}", 3000)
+            return
+
+        if setting_name == 'use_fvg':
+            success = command_manager.set_smc_feature('use_fvg', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"📊 Fair Value Gap detection {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: FVG analysis {status}", 3000)
+            return
+
+        if setting_name == 'use_market_structure':
+            success = command_manager.set_smc_feature('use_market_structure', value)
+            if success:
+                status = "enabled" if value else "disabled"
+                self.commentary_panel.add_comment(f"🏗️ Market structure analysis {status}", 3)
+                self.statusBar.showMessage(f"✓ EA: Market structure {status}", 3000)
+            return
+
+        # ============================================================
+        # MACHINE LEARNING
+        # ============================================================
+
+        if setting_name == 'use_ml_filter':
+            success = command_manager.set_ml_enabled(value)
+            if success:
+                if value:
+                    self.commentary_panel.add_comment("🤖 ML filter ENABLED - Using AI predictions", 1)
+                    self.statusBar.showMessage("✓ EA: ML filter active", 3000)
+                else:
+                    self.commentary_panel.add_comment("🤖 ML filter DISABLED", 3)
+                    self.statusBar.showMessage("✓ EA: ML filter inactive", 3000)
+            return
+
+        # ============================================================
+        # VISUAL CONTROLS (GUI only - don't send to EA)
+        # ============================================================
+
+        if setting_name.startswith('show_'):
+            # These only affect chart display, no need to send to EA
+            logger.info(f"Visual setting changed: {setting_name} = {value}")
+            return
+
+        # Unknown setting
+        logger.warning(f"Unknown setting: {setting_name}")
 
     def handle_guerilla_order(self, order_params: dict):
         """
