@@ -374,6 +374,17 @@ class ChartPanel(QWidget):
                            facecolor=color, edgecolor=color)
             self.canvas.axes.add_patch(rect)
 
+        # Set Y-axis limits with proper padding for price range
+        if highs and lows:
+            price_high = max(highs)
+            price_low = min(lows)
+            price_range = price_high - price_low
+
+            # Add 5% padding above/below for better visibility
+            padding = price_range * 0.05 if price_range > 0 else price_low * 0.001
+
+            self.canvas.axes.set_ylim(price_low - padding, price_high + padding)
+
         # Styling
         self.canvas.axes.set_facecolor('#0A0E27')
         self.canvas.axes.grid(True, alpha=0.2, color='#1E293B')
