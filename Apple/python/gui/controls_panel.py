@@ -6,7 +6,7 @@ All EA settings, filters, risk management, and trading controls
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QCheckBox,
     QPushButton, QSlider, QFrame, QGroupBox, QComboBox, QSpinBox,
-    QDoubleSpinBox, QScrollArea
+    QDoubleSpinBox, QScrollArea, QLineEdit
 )
 from PyQt6.QtCore import Qt, pyqtSignal, QPropertyAnimation, QEasingCurve
 from PyQt6.QtGui import QFont
@@ -453,7 +453,7 @@ class ControlsPanel(QWidget):
 
         layout.addLayout(order_type_layout)
 
-        # Entry price (for pending orders)
+        # Entry price (for pending orders) - SIMPLE TEXT BOX!
         entry_layout = QHBoxLayout()
         entry_label = QLabel("Entry Price:")
         entry_label.setStyleSheet(f"""
@@ -464,23 +464,26 @@ class ControlsPanel(QWidget):
         """)
         entry_layout.addWidget(entry_label)
 
-        self.entry_price_spin = QDoubleSpinBox()
-        self.entry_price_spin.setRange(0.00001, 100000.0)
-        self.entry_price_spin.setSingleStep(0.0001)
-        self.entry_price_spin.setValue(1.0850)
-        self.entry_price_spin.setDecimals(5)
-        self.entry_price_spin.setStyleSheet(f"""
-            QDoubleSpinBox {{
+        self.entry_price_input = QLineEdit()
+        self.entry_price_input.setText("1.08500")
+        self.entry_price_input.setPlaceholderText("e.g. 1.08500")
+        self.entry_price_input.setStyleSheet(f"""
+            QLineEdit {{
                 background-color: {settings.theme.surface_light};
                 color: {settings.theme.text_primary};
                 border: 1px solid {settings.theme.border_color};
                 border-radius: 4px;
-                padding: 4px;
+                padding: 6px;
                 font-size: {settings.theme.font_size_sm}px;
+                font-family: 'Courier New', monospace;
+            }}
+            QLineEdit:disabled {{
+                background-color: {settings.theme.surface_dark};
+                color: {settings.theme.text_secondary};
             }}
         """)
-        self.entry_price_spin.setEnabled(False)  # Disabled for MARKET orders
-        entry_layout.addWidget(self.entry_price_spin)
+        self.entry_price_input.setEnabled(False)  # Disabled for MARKET orders
+        entry_layout.addWidget(self.entry_price_input)
 
         layout.addLayout(entry_layout)
 
@@ -583,30 +586,38 @@ class ControlsPanel(QWidget):
         """Handle order type change"""
         # Enable entry price for pending orders
         is_pending = order_type != "MARKET"
-        self.entry_price_spin.setEnabled(is_pending)
+        self.entry_price_input.setEnabled(is_pending)
 
         if is_pending:
-            # Update entry price label color
-            self.entry_price_spin.setStyleSheet(f"""
-                QDoubleSpinBox {{
+            # Update entry price field color (orange = active!)
+            self.entry_price_input.setStyleSheet(f"""
+                QLineEdit {{
                     background-color: {settings.theme.warning};
                     color: {settings.theme.background};
-                    border: 1px solid {settings.theme.warning};
+                    border: 2px solid {settings.theme.warning};
                     border-radius: 4px;
-                    padding: 4px;
+                    padding: 6px;
                     font-size: {settings.theme.font_size_sm}px;
+                    font-weight: 600;
+                    font-family: 'Courier New', monospace;
                     font-weight: 600;
                 }}
             """)
         else:
-            self.entry_price_spin.setStyleSheet(f"""
-                QDoubleSpinBox {{
+            # Reset to default gray style for MARKET orders
+            self.entry_price_input.setStyleSheet(f"""
+                QLineEdit {{
                     background-color: {settings.theme.surface_light};
                     color: {settings.theme.text_primary};
                     border: 1px solid {settings.theme.border_color};
                     border-radius: 4px;
-                    padding: 4px;
+                    padding: 6px;
                     font-size: {settings.theme.font_size_sm}px;
+                    font-family: 'Courier New', monospace;
+                }}
+                QLineEdit:disabled {{
+                    background-color: {settings.theme.surface_dark};
+                    color: {settings.theme.text_secondary};
                 }}
             """)
 
@@ -619,7 +630,15 @@ class ControlsPanel(QWidget):
         proxy_mode = self.proxy_mode_checkbox.isChecked()
         instant_exec = self.instant_exec_checkbox.isChecked()
         order_type = self.order_type_combo.currentText()
-        entry_price = self.entry_price_spin.value()
+
+        # Get entry price from text input (only for pending orders)
+        entry_price = None
+        if order_type != "MARKET":
+            try:
+                entry_price = float(self.entry_price_input.text())
+            except ValueError:
+                logger.warning(f"Invalid entry price: {self.entry_price_input.text()}")
+                entry_price = 1.08500  # Default fallback
 
         logger.info(f"🎯 GUERILLA BUY fired: {order_type} {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}, Instant: {instant_exec}")
 
@@ -633,7 +652,7 @@ class ControlsPanel(QWidget):
             'proxy_mode': proxy_mode,
             'instant_exec': instant_exec,
             'order_type': order_type,
-            'entry_price': entry_price if order_type != "MARKET" else None
+            'entry_price': entry_price
         })
 
     def fire_guerilla_sell(self):
@@ -645,7 +664,15 @@ class ControlsPanel(QWidget):
         proxy_mode = self.proxy_mode_checkbox.isChecked()
         instant_exec = self.instant_exec_checkbox.isChecked()
         order_type = self.order_type_combo.currentText()
-        entry_price = self.entry_price_spin.value()
+
+        # Get entry price from text input (only for pending orders)
+        entry_price = None
+        if order_type != "MARKET":
+            try:
+                entry_price = float(self.entry_price_input.text())
+            except ValueError:
+                logger.warning(f"Invalid entry price: {self.entry_price_input.text()}")
+                entry_price = 1.08500  # Default fallback
 
         logger.info(f"🎯 GUERILLA SELL fired: {order_type} {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}, Instant: {instant_exec}")
 
@@ -659,7 +686,7 @@ class ControlsPanel(QWidget):
             'proxy_mode': proxy_mode,
             'instant_exec': instant_exec,
             'order_type': order_type,
-            'entry_price': entry_price if order_type != "MARKET" else None
+            'entry_price': entry_price
         })
 
     def create_risk_section(self) -> QFrame:
