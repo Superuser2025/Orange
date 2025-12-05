@@ -426,6 +426,90 @@ class ControlsPanel(QWidget):
 
         layout.addLayout(tp_layout)
 
+        # Order type selector
+        order_type_layout = QHBoxLayout()
+        order_type_label = QLabel("Order Type:")
+        order_type_label.setStyleSheet(f"""
+            QLabel {{
+                color: {settings.theme.text_secondary};
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        order_type_layout.addWidget(order_type_label)
+
+        self.order_type_combo = QComboBox()
+        self.order_type_combo.addItems(["MARKET", "BUY STOP", "SELL STOP", "BUY LIMIT", "SELL LIMIT"])
+        self.order_type_combo.setStyleSheet(f"""
+            QComboBox {{
+                background-color: {settings.theme.surface_light};
+                color: {settings.theme.text_primary};
+                border: 1px solid {settings.theme.border_color};
+                border-radius: 4px;
+                padding: 4px 8px;
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        order_type_layout.addWidget(self.order_type_combo)
+
+        layout.addLayout(order_type_layout)
+
+        # Entry price (for pending orders)
+        entry_layout = QHBoxLayout()
+        entry_label = QLabel("Entry Price:")
+        entry_label.setStyleSheet(f"""
+            QLabel {{
+                color: {settings.theme.text_secondary};
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        entry_layout.addWidget(entry_label)
+
+        self.entry_price_spin = QDoubleSpinBox()
+        self.entry_price_spin.setRange(0.00001, 100000.0)
+        self.entry_price_spin.setSingleStep(0.0001)
+        self.entry_price_spin.setValue(1.0850)
+        self.entry_price_spin.setDecimals(5)
+        self.entry_price_spin.setStyleSheet(f"""
+            QDoubleSpinBox {{
+                background-color: {settings.theme.surface_light};
+                color: {settings.theme.text_primary};
+                border: 1px solid {settings.theme.border_color};
+                border-radius: 4px;
+                padding: 4px;
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        self.entry_price_spin.setEnabled(False)  # Disabled for MARKET orders
+        entry_layout.addWidget(self.entry_price_spin)
+
+        layout.addLayout(entry_layout)
+
+        # Enable/disable entry price based on order type
+        self.order_type_combo.currentTextChanged.connect(self.on_order_type_changed)
+
+        # Instant execution checkbox (NO CONFIRMATION!)
+        self.instant_exec_checkbox = QCheckBox("⚡ Instant Execution (No Confirmation)")
+        self.instant_exec_checkbox.setChecked(True)  # Default: INSTANT!
+        self.instant_exec_checkbox.setStyleSheet(f"""
+            QCheckBox {{
+                color: {settings.theme.warning};
+                font-size: {settings.theme.font_size_sm}px;
+                font-weight: 600;
+                spacing: 4px;
+            }}
+            QCheckBox::indicator {{
+                width: 16px;
+                height: 16px;
+                border: 2px solid {settings.theme.warning};
+                border-radius: 3px;
+                background-color: {settings.theme.surface_light};
+            }}
+            QCheckBox::indicator:checked {{
+                background-color: {settings.theme.warning};
+            }}
+        """)
+        layout.addWidget(self.instant_exec_checkbox)
+
         # BUY/SELL buttons (BIG!)
         button_layout = QHBoxLayout()
         button_layout.setSpacing(12)
@@ -495,6 +579,37 @@ class ControlsPanel(QWidget):
 
         return frame
 
+    def on_order_type_changed(self, order_type: str):
+        """Handle order type change"""
+        # Enable entry price for pending orders
+        is_pending = order_type != "MARKET"
+        self.entry_price_spin.setEnabled(is_pending)
+
+        if is_pending:
+            # Update entry price label color
+            self.entry_price_spin.setStyleSheet(f"""
+                QDoubleSpinBox {{
+                    background-color: {settings.theme.warning};
+                    color: {settings.theme.background};
+                    border: 1px solid {settings.theme.warning};
+                    border-radius: 4px;
+                    padding: 4px;
+                    font-size: {settings.theme.font_size_sm}px;
+                    font-weight: 600;
+                }}
+            """)
+        else:
+            self.entry_price_spin.setStyleSheet(f"""
+                QDoubleSpinBox {{
+                    background-color: {settings.theme.surface_light};
+                    color: {settings.theme.text_primary};
+                    border: 1px solid {settings.theme.border_color};
+                    border-radius: 4px;
+                    padding: 4px;
+                    font-size: {settings.theme.font_size_sm}px;
+                }}
+            """)
+
     def fire_guerilla_buy(self):
         """Fire GUERILLA BUY order"""
         symbol = self.symbol_combo.currentText()
@@ -502,8 +617,11 @@ class ControlsPanel(QWidget):
         sl_pips = self.sl_pips_spin.value()
         tp_pips = self.tp_pips_spin.value()
         proxy_mode = self.proxy_mode_checkbox.isChecked()
+        instant_exec = self.instant_exec_checkbox.isChecked()
+        order_type = self.order_type_combo.currentText()
+        entry_price = self.entry_price_spin.value()
 
-        logger.info(f"🎯 GUERILLA BUY fired: {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}")
+        logger.info(f"🎯 GUERILLA BUY fired: {order_type} {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}, Instant: {instant_exec}")
 
         # Emit signal with guerilla parameters
         self.setting_changed.emit('guerilla_order', {
@@ -512,7 +630,10 @@ class ControlsPanel(QWidget):
             'volume': volume,
             'sl_pips': sl_pips,
             'tp_pips': tp_pips,
-            'proxy_mode': proxy_mode
+            'proxy_mode': proxy_mode,
+            'instant_exec': instant_exec,
+            'order_type': order_type,
+            'entry_price': entry_price if order_type != "MARKET" else None
         })
 
     def fire_guerilla_sell(self):
@@ -522,8 +643,11 @@ class ControlsPanel(QWidget):
         sl_pips = self.sl_pips_spin.value()
         tp_pips = self.tp_pips_spin.value()
         proxy_mode = self.proxy_mode_checkbox.isChecked()
+        instant_exec = self.instant_exec_checkbox.isChecked()
+        order_type = self.order_type_combo.currentText()
+        entry_price = self.entry_price_spin.value()
 
-        logger.info(f"🎯 GUERILLA SELL fired: {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}")
+        logger.info(f"🎯 GUERILLA SELL fired: {order_type} {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}, Instant: {instant_exec}")
 
         # Emit signal with guerilla parameters
         self.setting_changed.emit('guerilla_order', {
@@ -532,7 +656,10 @@ class ControlsPanel(QWidget):
             'volume': volume,
             'sl_pips': sl_pips,
             'tp_pips': tp_pips,
-            'proxy_mode': proxy_mode
+            'proxy_mode': proxy_mode,
+            'instant_exec': instant_exec,
+            'order_type': order_type,
+            'entry_price': entry_price if order_type != "MARKET" else None
         })
 
     def create_risk_section(self) -> QFrame:

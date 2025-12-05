@@ -481,60 +481,104 @@ class MainWindow(QMainWindow):
         """
         from PyQt6.QtWidgets import QMessageBox
 
-        order_type = order_params['type']
+        order_type = order_params['type']  # BUY or SELL
         symbol = order_params['symbol']
         volume = order_params['volume']
         sl_pips = order_params['sl_pips']
         tp_pips = order_params['tp_pips']
         proxy_mode = order_params['proxy_mode']
+        instant_exec = order_params.get('instant_exec', False)  # NEW: Instant execution flag
+        mt5_order_type = order_params.get('order_type', 'MARKET')  # NEW: MARKET, BUY STOP, etc.
+        entry_price = order_params.get('entry_price', None)  # NEW: For pending orders
 
-        # Confirmation dialog
-        reply = QMessageBox.question(
-            self,
-            '🎯 GUERILLA TRADER - Confirm Order',
-            f"""<h3>Fire GUERILLA {order_type} Order?</h3>
-            <table>
-            <tr><td><b>Symbol:</b></td><td>{symbol}</td></tr>
-            <tr><td><b>Volume:</b></td><td>{volume} lots</td></tr>
-            <tr><td><b>Stop Loss:</b></td><td>{sl_pips} pips (TIGHT!)</td></tr>
-            <tr><td><b>Take Profit:</b></td><td>{tp_pips} pips</td></tr>
-            <tr><td><b>Proxy Mode:</b></td><td>{"✓ YES (Bypass broker)" if proxy_mode else "✗ NO (Normal)"}</td></tr>
-            </table>
-            <br>
-            <i>{'⚡ This will execute instantly with tight stops!' if proxy_mode else 'Standard broker execution'}</i>
-            """,
-            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-            QMessageBox.StandardButton.No
-        )
+        # Determine if this is a pending order
+        is_pending = mt5_order_type != 'MARKET'
 
-        if reply == QMessageBox.StandardButton.No:
-            self.commentary_panel.add_comment(f"❌ GUERILLA {order_type} cancelled by user", 3)
-            return
+        # Confirmation dialog (SKIP if instant execution is enabled)
+        if not instant_exec:
+            # Build confirmation message based on order type
+            if is_pending:
+                order_desc = f"{mt5_order_type} @ {entry_price:.5f}"
+            else:
+                order_desc = "MARKET (Instant)"
+
+            reply = QMessageBox.question(
+                self,
+                '🎯 GUERILLA TRADER - Confirm Order',
+                f"""<h3>Fire GUERILLA {order_type} Order?</h3>
+                <table>
+                <tr><td><b>Symbol:</b></td><td>{symbol}</td></tr>
+                <tr><td><b>Type:</b></td><td>{order_desc}</td></tr>
+                <tr><td><b>Volume:</b></td><td>{volume} lots</td></tr>
+                <tr><td><b>Stop Loss:</b></td><td>{sl_pips} pips (TIGHT!)</td></tr>
+                <tr><td><b>Take Profit:</b></td><td>{tp_pips} pips</td></tr>
+                <tr><td><b>Proxy Mode:</b></td><td>{"✓ YES (Bypass broker)" if proxy_mode else "✗ NO (Normal)"}</td></tr>
+                </table>
+                <br>
+                <i>{'⚡ This will execute instantly with tight stops!' if proxy_mode else 'Standard broker execution'}</i>
+                """,
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.No
+            )
+
+            if reply == QMessageBox.StandardButton.No:
+                self.commentary_panel.add_comment(f"❌ GUERILLA {order_type} cancelled by user", 3)
+                return
 
         # Execute via GUERILLA TRADER proxy engine
         if proxy_mode:
-            success, message = proxy_trader.place_market_order(
-                symbol=symbol,
-                order_type=order_type,
-                volume=volume,
-                sl_pips=sl_pips,
-                tp_pips=tp_pips
-            )
-
-            if success:
-                self.commentary_panel.add_comment(
-                    f"🎯 GUERILLA {order_type} {symbol} FIRED! Virtual SL/TP active", 1
+            # Choose execution path based on order type
+            if is_pending:
+                # PENDING ORDER: held locally, not sent to broker until triggered
+                success, message = proxy_trader.place_pending_order(
+                    symbol=symbol,
+                    order_type=f"{order_type}_{mt5_order_type.split()[1]}",  # e.g., "BUY_STOP"
+                    entry_price=entry_price,
+                    volume=volume,
+                    sl_pips=sl_pips,
+                    tp_pips=tp_pips
                 )
-                self.statusBar.showMessage(f"✓ GUERILLA {order_type} executed: {message}", 5000)
 
-                # Show stats
-                stats = proxy_trader.get_statistics()
-                self.commentary_panel.add_comment(
-                    f"📊 Guerilla Stats: {stats['active_orders']} active | {stats['total_profit']:.2f} total P/L", 3
-                )
+                if success:
+                    self.commentary_panel.add_comment(
+                        f"⚡ GUERILLA {mt5_order_type} @ {entry_price:.5f} PLACED! Waiting for trigger...", 1
+                    )
+                    self.statusBar.showMessage(f"✓ GUERILLA pending order: {message}", 5000)
+
+                    # Show stats
+                    stats = proxy_trader.get_statistics()
+                    self.commentary_panel.add_comment(
+                        f"📊 Guerilla Stats: {stats['pending_orders']} pending | {stats['active_orders']} active | {stats['total_profit']:.2f} P/L", 3
+                    )
+                else:
+                    self.commentary_panel.add_comment(f"❌ GUERILLA pending order failed: {message}", 1)
+                    if not instant_exec:  # Only show dialog if not instant mode
+                        QMessageBox.critical(self, "Order Failed", f"GUERILLA pending order failed:\n{message}")
             else:
-                self.commentary_panel.add_comment(f"❌ GUERILLA order failed: {message}", 1)
-                QMessageBox.critical(self, "Order Failed", f"GUERILLA order failed:\n{message}")
+                # MARKET ORDER: execute immediately
+                success, message = proxy_trader.place_market_order(
+                    symbol=symbol,
+                    order_type=order_type,
+                    volume=volume,
+                    sl_pips=sl_pips,
+                    tp_pips=tp_pips
+                )
+
+                if success:
+                    self.commentary_panel.add_comment(
+                        f"🎯 GUERILLA {order_type} {symbol} FIRED! Virtual SL/TP active", 1
+                    )
+                    self.statusBar.showMessage(f"✓ GUERILLA {order_type} executed: {message}", 5000)
+
+                    # Show stats
+                    stats = proxy_trader.get_statistics()
+                    self.commentary_panel.add_comment(
+                        f"📊 Guerilla Stats: {stats['active_orders']} active | {stats['total_profit']:.2f} total P/L", 3
+                    )
+                else:
+                    self.commentary_panel.add_comment(f"❌ GUERILLA order failed: {message}", 1)
+                    if not instant_exec:  # Only show dialog if not instant mode
+                        QMessageBox.critical(self, "Order Failed", f"GUERILLA order failed:\n{message}")
         else:
             # Standard MT5 order (no proxy)
             success, message = connector.place_order(
