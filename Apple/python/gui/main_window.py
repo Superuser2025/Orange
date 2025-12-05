@@ -14,6 +14,7 @@ from config import settings
 from utils.logger import logger
 from core.mt5_connector import connector
 from core.data_manager import data_manager
+from core.proxy_trader import proxy_trader  # GUERILLA TRADER
 
 # Import panels
 from gui.chart_panel_matplotlib import ChartPanel
@@ -49,6 +50,11 @@ class MainWindow(QMainWindow):
 
         # Connect to MT5
         self.connect_to_mt5()
+
+        # Start GUERILLA TRADER engine
+        if self.connected:
+            proxy_trader.start()
+            logger.info("🎯 GUERILLA TRADER engine started")
 
         logger.info("Main window initialized")
 
@@ -448,6 +454,11 @@ class MainWindow(QMainWindow):
         """Handle setting change from controls panel"""
         logger.info(f"Setting changed: {setting_name} = {value}")
 
+        # Handle GUERILLA TRADER orders
+        if setting_name == 'guerilla_order':
+            self.handle_guerilla_order(value)
+            return
+
         # Update timers if update speed changed
         if setting_name == 'update_speed':
             self.market_data_timer.setInterval(settings.app.market_data_update_interval)
@@ -460,6 +471,87 @@ class MainWindow(QMainWindow):
                 self.commentary_panel.add_comment("⚠️ AUTO TRADING ENABLED - EA will execute trades!", 1)
             else:
                 self.commentary_panel.add_comment("✓ INDICATOR MODE - No trading", 3)
+
+    def handle_guerilla_order(self, order_params: dict):
+        """
+        Handle GUERILLA TRADER order execution
+
+        Args:
+            order_params: Dictionary with order parameters
+        """
+        from PyQt6.QtWidgets import QMessageBox
+
+        order_type = order_params['type']
+        symbol = order_params['symbol']
+        volume = order_params['volume']
+        sl_pips = order_params['sl_pips']
+        tp_pips = order_params['tp_pips']
+        proxy_mode = order_params['proxy_mode']
+
+        # Confirmation dialog
+        reply = QMessageBox.question(
+            self,
+            '🎯 GUERILLA TRADER - Confirm Order',
+            f"""<h3>Fire GUERILLA {order_type} Order?</h3>
+            <table>
+            <tr><td><b>Symbol:</b></td><td>{symbol}</td></tr>
+            <tr><td><b>Volume:</b></td><td>{volume} lots</td></tr>
+            <tr><td><b>Stop Loss:</b></td><td>{sl_pips} pips (TIGHT!)</td></tr>
+            <tr><td><b>Take Profit:</b></td><td>{tp_pips} pips</td></tr>
+            <tr><td><b>Proxy Mode:</b></td><td>{"✓ YES (Bypass broker)" if proxy_mode else "✗ NO (Normal)"}</td></tr>
+            </table>
+            <br>
+            <i>{'⚡ This will execute instantly with tight stops!' if proxy_mode else 'Standard broker execution'}</i>
+            """,
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+
+        if reply == QMessageBox.StandardButton.No:
+            self.commentary_panel.add_comment(f"❌ GUERILLA {order_type} cancelled by user", 3)
+            return
+
+        # Execute via GUERILLA TRADER proxy engine
+        if proxy_mode:
+            success, message = proxy_trader.place_market_order(
+                symbol=symbol,
+                order_type=order_type,
+                volume=volume,
+                sl_pips=sl_pips,
+                tp_pips=tp_pips
+            )
+
+            if success:
+                self.commentary_panel.add_comment(
+                    f"🎯 GUERILLA {order_type} {symbol} FIRED! Virtual SL/TP active", 1
+                )
+                self.statusBar.showMessage(f"✓ GUERILLA {order_type} executed: {message}", 5000)
+
+                # Show stats
+                stats = proxy_trader.get_statistics()
+                self.commentary_panel.add_comment(
+                    f"📊 Guerilla Stats: {stats['active_orders']} active | {stats['total_profit']:.2f} total P/L", 3
+                )
+            else:
+                self.commentary_panel.add_comment(f"❌ GUERILLA order failed: {message}", 1)
+                QMessageBox.critical(self, "Order Failed", f"GUERILLA order failed:\n{message}")
+        else:
+            # Standard MT5 order (no proxy)
+            success, message = connector.place_order(
+                symbol=symbol,
+                order_type=order_type,
+                volume=volume,
+                sl=0,  # Calculate from pips if needed
+                tp=0,
+                comment="Manual"
+            )
+
+            if success:
+                self.commentary_panel.add_comment(f"✓ Standard {order_type} {symbol} placed", 2)
+                self.statusBar.showMessage(f"Order placed: {message}", 3000)
+            else:
+                self.commentary_panel.add_comment(f"❌ Order failed: {message}", 1)
+                QMessageBox.critical(self, "Order Failed", f"Order failed:\n{message}")
 
     def on_order_requested(self, order_type: str):
         """Handle order request from controls panel"""
@@ -505,6 +597,10 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         """Handle window close event"""
         logger.info("Application shutting down...")
+
+        # Stop GUERILLA TRADER engine
+        proxy_trader.stop()
+        logger.info("Guerilla Trader stopped")
 
         # Save settings
         settings.save()

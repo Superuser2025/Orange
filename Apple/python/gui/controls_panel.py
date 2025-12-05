@@ -252,13 +252,13 @@ class ControlsPanel(QWidget):
         return frame
 
     def create_quick_orders_section(self) -> QFrame:
-        """Create quick order buttons"""
+        """Create GUERILLA TRADER section"""
 
         frame = QFrame()
         frame.setStyleSheet(f"""
             QFrame {{
                 background-color: {settings.theme.surface};
-                border: 1px solid {settings.theme.border_color};
+                border: 2px solid {settings.theme.warning};
                 border-radius: 12px;
                 padding: 16px;
             }}
@@ -267,28 +267,174 @@ class ControlsPanel(QWidget):
         layout = QVBoxLayout(frame)
         layout.setSpacing(12)
 
-        # Title
-        title = QLabel("🎯 Quick Orders")
+        # Title with toggle
+        header_layout = QHBoxLayout()
+
+        title = QLabel("⚡ GUERILLA TRADER")
         title.setStyleSheet(f"""
             QLabel {{
-                color: {settings.theme.accent};
+                color: {settings.theme.warning};
                 font-size: {settings.theme.font_size_md}px;
-                font-weight: 600;
+                font-weight: 700;
                 background: transparent;
                 border: none;
             }}
         """)
-        layout.addWidget(title)
+        header_layout.addWidget(title)
 
-        # Button row
+        header_layout.addStretch()
+
+        # Proxy mode toggle
+        self.proxy_mode_checkbox = QCheckBox("Proxy Mode")
+        self.proxy_mode_checkbox.setChecked(True)
+        self.proxy_mode_checkbox.setStyleSheet(f"""
+            QCheckBox {{
+                color: {settings.theme.success};
+                font-size: {settings.theme.font_size_sm}px;
+                font-weight: 600;
+                spacing: 4px;
+            }}
+            QCheckBox::indicator {{
+                width: 16px;
+                height: 16px;
+                border: 2px solid {settings.theme.success};
+                border-radius: 3px;
+                background-color: {settings.theme.surface_light};
+            }}
+            QCheckBox::indicator:checked {{
+                background-color: {settings.theme.success};
+            }}
+        """)
+        header_layout.addWidget(self.proxy_mode_checkbox)
+
+        layout.addLayout(header_layout)
+
+        # Symbol selector
+        symbol_layout = QHBoxLayout()
+        symbol_label = QLabel("Symbol:")
+        symbol_label.setStyleSheet(f"""
+            QLabel {{
+                color: {settings.theme.text_secondary};
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        symbol_layout.addWidget(symbol_label)
+
+        self.symbol_combo = QComboBox()
+        self.symbol_combo.addItems(["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "NZDUSD", "USDCHF", "EURGBP", "EURJPY", "GBPJPY"])
+        self.symbol_combo.setStyleSheet(f"""
+            QComboBox {{
+                background-color: {settings.theme.surface_light};
+                color: {settings.theme.text_primary};
+                border: 1px solid {settings.theme.border_color};
+                border-radius: 4px;
+                padding: 4px 8px;
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        symbol_layout.addWidget(self.symbol_combo)
+
+        layout.addLayout(symbol_layout)
+
+        # Lot size input
+        lot_layout = QHBoxLayout()
+        lot_label = QLabel("Lot Size:")
+        lot_label.setStyleSheet(f"""
+            QLabel {{
+                color: {settings.theme.text_secondary};
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        lot_layout.addWidget(lot_label)
+
+        self.lot_size_spin = QDoubleSpinBox()
+        self.lot_size_spin.setRange(0.01, 10.0)
+        self.lot_size_spin.setSingleStep(0.01)
+        self.lot_size_spin.setValue(0.10)
+        self.lot_size_spin.setDecimals(2)
+        self.lot_size_spin.setStyleSheet(f"""
+            QDoubleSpinBox {{
+                background-color: {settings.theme.surface_light};
+                color: {settings.theme.text_primary};
+                border: 1px solid {settings.theme.border_color};
+                border-radius: 4px;
+                padding: 4px;
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        lot_layout.addWidget(self.lot_size_spin)
+
+        layout.addLayout(lot_layout)
+
+        # SL Pips input
+        sl_layout = QHBoxLayout()
+        sl_label = QLabel("SL Pips:")
+        sl_label.setStyleSheet(f"""
+            QLabel {{
+                color: {settings.theme.text_secondary};
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        sl_layout.addWidget(sl_label)
+
+        self.sl_pips_spin = QSpinBox()
+        self.sl_pips_spin.setRange(1, 500)
+        self.sl_pips_spin.setValue(5)  # Tight default!
+        self.sl_pips_spin.setSuffix(" pips")
+        self.sl_pips_spin.setStyleSheet(f"""
+            QSpinBox {{
+                background-color: {settings.theme.danger};
+                color: {settings.theme.background};
+                border: 1px solid {settings.theme.danger};
+                border-radius: 4px;
+                padding: 4px;
+                font-size: {settings.theme.font_size_sm}px;
+                font-weight: 600;
+            }}
+        """)
+        sl_layout.addWidget(self.sl_pips_spin)
+
+        layout.addLayout(sl_layout)
+
+        # TP Pips input
+        tp_layout = QHBoxLayout()
+        tp_label = QLabel("TP Pips:")
+        tp_label.setStyleSheet(f"""
+            QLabel {{
+                color: {settings.theme.text_secondary};
+                font-size: {settings.theme.font_size_sm}px;
+            }}
+        """)
+        tp_layout.addWidget(tp_label)
+
+        self.tp_pips_spin = QSpinBox()
+        self.tp_pips_spin.setRange(1, 1000)
+        self.tp_pips_spin.setValue(10)
+        self.tp_pips_spin.setSuffix(" pips")
+        self.tp_pips_spin.setStyleSheet(f"""
+            QSpinBox {{
+                background-color: {settings.theme.success};
+                color: {settings.theme.background};
+                border: 1px solid {settings.theme.success};
+                border-radius: 4px;
+                padding: 4px;
+                font-size: {settings.theme.font_size_sm}px;
+                font-weight: 600;
+            }}
+        """)
+        tp_layout.addWidget(self.tp_pips_spin)
+
+        layout.addLayout(tp_layout)
+
+        # BUY/SELL buttons (BIG!)
         button_layout = QHBoxLayout()
         button_layout.setSpacing(12)
 
         # BUY button
-        buy_button = QPushButton("📈 BUY")
-        buy_button.clicked.connect(lambda: self.order_requested.emit('BUY'))
-        buy_button.setFixedHeight(50)
-        buy_button.setStyleSheet(f"""
+        self.guerilla_buy_button = QPushButton("🎯 BUY")
+        self.guerilla_buy_button.clicked.connect(self.fire_guerilla_buy)
+        self.guerilla_buy_button.setFixedHeight(50)
+        self.guerilla_buy_button.setStyleSheet(f"""
             QPushButton {{
                 background-color: {settings.theme.success};
                 color: {settings.theme.background};
@@ -301,15 +447,17 @@ class ControlsPanel(QWidget):
                 background-color: {settings.theme.bullish};
             }}
             QPushButton:pressed {{
+                background-color: {settings.theme.success};
+                transform: scale(0.95);
             }}
         """)
-        button_layout.addWidget(buy_button)
+        button_layout.addWidget(self.guerilla_buy_button)
 
         # SELL button
-        sell_button = QPushButton("📉 SELL")
-        sell_button.clicked.connect(lambda: self.order_requested.emit('SELL'))
-        sell_button.setFixedHeight(50)
-        sell_button.setStyleSheet(f"""
+        self.guerilla_sell_button = QPushButton("🎯 SELL")
+        self.guerilla_sell_button.clicked.connect(self.fire_guerilla_sell)
+        self.guerilla_sell_button.setFixedHeight(50)
+        self.guerilla_sell_button.setStyleSheet(f"""
             QPushButton {{
                 background-color: {settings.theme.danger};
                 color: {settings.theme.background};
@@ -322,13 +470,70 @@ class ControlsPanel(QWidget):
                 background-color: {settings.theme.bearish};
             }}
             QPushButton:pressed {{
+                background-color: {settings.theme.danger};
+                transform: scale(0.95);
             }}
         """)
-        button_layout.addWidget(sell_button)
+        button_layout.addWidget(self.guerilla_sell_button)
 
         layout.addLayout(button_layout)
 
+        # Info label
+        info_label = QLabel("💡 Bypasses broker restrictions!")
+        info_label.setStyleSheet(f"""
+            QLabel {{
+                color: {settings.theme.text_secondary};
+                font-size: {settings.theme.font_size_xs}px;
+                font-style: italic;
+                padding: 4px;
+                background: transparent;
+                border: none;
+            }}
+        """)
+        info_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(info_label)
+
         return frame
+
+    def fire_guerilla_buy(self):
+        """Fire GUERILLA BUY order"""
+        symbol = self.symbol_combo.currentText()
+        volume = self.lot_size_spin.value()
+        sl_pips = self.sl_pips_spin.value()
+        tp_pips = self.tp_pips_spin.value()
+        proxy_mode = self.proxy_mode_checkbox.isChecked()
+
+        logger.info(f"🎯 GUERILLA BUY fired: {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}")
+
+        # Emit signal with guerilla parameters
+        self.setting_changed.emit('guerilla_order', {
+            'type': 'BUY',
+            'symbol': symbol,
+            'volume': volume,
+            'sl_pips': sl_pips,
+            'tp_pips': tp_pips,
+            'proxy_mode': proxy_mode
+        })
+
+    def fire_guerilla_sell(self):
+        """Fire GUERILLA SELL order"""
+        symbol = self.symbol_combo.currentText()
+        volume = self.lot_size_spin.value()
+        sl_pips = self.sl_pips_spin.value()
+        tp_pips = self.tp_pips_spin.value()
+        proxy_mode = self.proxy_mode_checkbox.isChecked()
+
+        logger.info(f"🎯 GUERILLA SELL fired: {symbol} {volume} lots, SL: {sl_pips} pips, TP: {tp_pips} pips, Proxy: {proxy_mode}")
+
+        # Emit signal with guerilla parameters
+        self.setting_changed.emit('guerilla_order', {
+            'type': 'SELL',
+            'symbol': symbol,
+            'volume': volume,
+            'sl_pips': sl_pips,
+            'tp_pips': tp_pips,
+            'proxy_mode': proxy_mode
+        })
 
     def create_risk_section(self) -> QFrame:
         """Create risk management section"""
