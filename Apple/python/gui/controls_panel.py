@@ -478,8 +478,8 @@ class ControlsPanel(QWidget):
                 font-family: 'Courier New', monospace;
             }}
             QLineEdit:disabled {{
-                background-color: {settings.theme.surface_dark};
-                color: {settings.theme.text_secondary};
+                background-color: {settings.theme.surface};
+                color: {settings.theme.text_disabled};
             }}
         """)
         self.entry_price_input.setEnabled(False)  # Disabled for MARKET orders
@@ -616,8 +616,8 @@ class ControlsPanel(QWidget):
                     font-family: 'Courier New', monospace;
                 }}
                 QLineEdit:disabled {{
-                    background-color: {settings.theme.surface_dark};
-                    color: {settings.theme.text_secondary};
+                    background-color: {settings.theme.surface};
+                    color: {settings.theme.text_disabled};
                 }}
             """)
 
