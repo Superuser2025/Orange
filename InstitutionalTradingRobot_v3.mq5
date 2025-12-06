@@ -198,6 +198,7 @@ bool g_UsePatternTracking;
 bool g_UseParameterAdaptation;
 bool g_UseRegimeStrategy;
 bool g_MLEnabled;  // Master switch for ML system
+double g_RiskPercent;  // Risk per trade (modifiable by Python GUI)
 
 // Visual toggles (GUI-controllable - turn chart colors on/off)
 bool g_ShowPatternBoxes = true;
@@ -755,6 +756,7 @@ int OnInit()
     g_UseParameterAdaptation = UseParameterAdaptation;
     g_UseRegimeStrategy = UseRegimeStrategy;
     g_MLEnabled = ML_Enabled;
+    g_RiskPercent = BaseRiskPercent;  // Initialize from input parameter
 
     // Apply Trading Profile (Auto-configure all settings based on selected timeframe)
     ApplyTradingProfile();
@@ -855,6 +857,13 @@ int OnInit()
         Print("ML System disabled (ML_Enabled = false)");
     }
 
+    //═══════════════════════════════════════════════════════════════
+    // PYTHON COMMAND READER - Bidirectional IPC
+    //═══════════════════════════════════════════════════════════════
+    // Set timer to read commands from Python GUI every 1 second
+    EventSetTimer(1);
+    Print("✓ Python command reader initialized (checking every 1 second)");
+
     return INIT_SUCCEEDED;
 }
 
@@ -863,6 +872,9 @@ int OnInit()
 //+------------------------------------------------------------------+
 void OnDeinit(const int reason)
 {
+    // Kill timer for Python command reader
+    EventKillTimer();
+
     // Release indicators
     if(h_EMA_200 != INVALID_HANDLE) IndicatorRelease(h_EMA_200);
     if(h_EMA_Higher != INVALID_HANDLE) IndicatorRelease(h_EMA_Higher);
@@ -895,6 +907,279 @@ void OnDeinit(const int reason)
     Print("═══════════════════════════════════════════════════");
     Print("  Institutional Trading Robot v3.0 Stopped");
     Print("═══════════════════════════════════════════════════");
+}
+
+//+------------------------------------------------------------------+
+//| Timer function - Read commands from Python GUI                   |
+//+------------------------------------------------------------------+
+void OnTimer()
+{
+    ReadPythonCommands();
+}
+
+//+------------------------------------------------------------------+
+//| Read and apply commands from Python GUI via commands.json       |
+//+------------------------------------------------------------------+
+void ReadPythonCommands()
+{
+    // Build path to commands.json in MT5 Common Files
+    string terminal_data_path = TerminalInfoString(TERMINAL_DATA_PATH);
+    string commands_file = terminal_data_path + "\\MQL5\\Files\\AppleTrader\\commands.json";
+
+    // Open file for reading
+    int file_handle = FileOpen("AppleTrader\\commands.json", FILE_READ|FILE_TXT|FILE_COMMON);
+
+    if(file_handle == INVALID_HANDLE)
+    {
+        // File doesn't exist yet (Python app not started) - silent fail
+        return;
+    }
+
+    // Read entire file content
+    string json_content = "";
+    while(!FileIsEnding(file_handle))
+    {
+        json_content += FileReadString(file_handle);
+    }
+
+    FileClose(file_handle);
+
+    if(StringLen(json_content) < 10)
+    {
+        // Empty or invalid file
+        return;
+    }
+
+    // Parse settings from JSON (simple string-based parsing)
+    // Format: "enable_trading": true/false
+    string enable_trading_str = ExtractJSONValue(json_content, "enable_trading");
+    if(enable_trading_str != "")
+    {
+        bool new_value = (enable_trading_str == "true");
+        if(g_EnableTrading != new_value)
+        {
+            g_EnableTrading = new_value;
+            Print("✓ PYTHON COMMAND: Trading ", (g_EnableTrading ? "ENABLED" : "DISABLED"));
+            AddComment(g_EnableTrading ? "🟢 Python: AUTO TRADING ENABLED" : "🔴 Python: INDICATOR MODE",
+                      g_EnableTrading ? clrLime : clrOrange, PRIORITY_CRITICAL);
+        }
+    }
+
+    // Risk percent
+    string risk_str = ExtractJSONValue(json_content, "risk_percent");
+    if(risk_str != "")
+    {
+        double new_risk = StringToDouble(risk_str);
+        if(new_risk > 0 && new_risk != g_RiskPercent)
+        {
+            g_RiskPercent = new_risk;
+            Print("✓ PYTHON COMMAND: Risk changed to ", DoubleToString(g_RiskPercent, 2), "%");
+            AddComment("📊 Python: Risk updated to " + DoubleToString(g_RiskPercent, 1) + "%", clrYellow, PRIORITY_IMPORTANT);
+        }
+    }
+
+    // Filters
+    string use_volume = ExtractJSONNestedValue(json_content, "filters", "use_volume_filter");
+    if(use_volume != "")
+    {
+        bool new_value = (use_volume == "true");
+        if(g_UseVolumeFilter != new_value)
+        {
+            g_UseVolumeFilter = new_value;
+            Print("✓ PYTHON COMMAND: Volume filter ", (g_UseVolumeFilter ? "enabled" : "disabled"));
+        }
+    }
+
+    string use_spread = ExtractJSONNestedValue(json_content, "filters", "use_spread_filter");
+    if(use_spread != "")
+    {
+        bool new_value = (use_spread == "true");
+        if(g_UseSpreadFilter != new_value)
+        {
+            g_UseSpreadFilter = new_value;
+            Print("✓ PYTHON COMMAND: Spread filter ", (g_UseSpreadFilter ? "enabled" : "disabled"));
+        }
+    }
+
+    string use_mtf = ExtractJSONNestedValue(json_content, "filters", "use_mtf_confirmation");
+    if(use_mtf != "")
+    {
+        bool new_value = (use_mtf == "true");
+        if(g_UseMTFConfirmation != new_value)
+        {
+            g_UseMTFConfirmation = new_value;
+            Print("✓ PYTHON COMMAND: MTF confirmation ", (g_UseMTFConfirmation ? "enabled" : "disabled"));
+        }
+    }
+
+    string use_session = ExtractJSONNestedValue(json_content, "filters", "use_session_filter");
+    if(use_session != "")
+    {
+        bool new_value = (use_session == "true");
+        if(g_UseSessionFilter != new_value)
+        {
+            g_UseSessionFilter = new_value;
+            Print("✓ PYTHON COMMAND: Session filter ", (g_UseSessionFilter ? "enabled" : "disabled"));
+        }
+    }
+
+    string use_news = ExtractJSONNestedValue(json_content, "filters", "use_news_filter");
+    if(use_news != "")
+    {
+        bool new_value = (use_news == "true");
+        if(g_UseNewsFilter != new_value)
+        {
+            g_UseNewsFilter = new_value;
+            Print("✓ PYTHON COMMAND: News filter ", (g_UseNewsFilter ? "enabled" : "disabled"));
+        }
+    }
+
+    // SMC features
+    string use_liquidity = ExtractJSONNestedValue(json_content, "smc", "use_liquidity");
+    if(use_liquidity != "")
+    {
+        bool new_value = (use_liquidity == "true");
+        if(g_UseLiquiditySweep != new_value)
+        {
+            g_UseLiquiditySweep = new_value;
+            Print("✓ PYTHON COMMAND: Liquidity sweep ", (g_UseLiquiditySweep ? "enabled" : "disabled"));
+        }
+    }
+
+    string use_ob = ExtractJSONNestedValue(json_content, "smc", "use_order_blocks");
+    if(use_ob != "")
+    {
+        bool new_value = (use_ob == "true");
+        if(g_UseOrderBlockInvalidation != new_value)
+        {
+            g_UseOrderBlockInvalidation = new_value;
+            Print("✓ PYTHON COMMAND: Order blocks ", (g_UseOrderBlockInvalidation ? "enabled" : "disabled"));
+        }
+    }
+
+    string use_fvg = ExtractJSONNestedValue(json_content, "smc", "use_fvg");
+    if(use_fvg != "")
+    {
+        // Note: EA doesn't have g_UseFVG, but we can log it
+        Print("✓ PYTHON COMMAND: FVG detection ", (use_fvg == "true" ? "enabled" : "disabled"));
+    }
+
+    string use_structure = ExtractJSONNestedValue(json_content, "smc", "use_market_structure");
+    if(use_structure != "")
+    {
+        bool new_value = (use_structure == "true");
+        if(g_UseMarketStructure != new_value)
+        {
+            g_UseMarketStructure = new_value;
+            Print("✓ PYTHON COMMAND: Market structure ", (g_UseMarketStructure ? "enabled" : "disabled"));
+        }
+    }
+
+    // ML settings
+    string ml_enabled = ExtractJSONNestedValue(json_content, "ml", "enabled");
+    if(ml_enabled != "")
+    {
+        bool new_value = (ml_enabled == "true");
+        if(g_MLEnabled != new_value)
+        {
+            g_MLEnabled = new_value;
+            Print("✓ PYTHON COMMAND: ML System ", (g_MLEnabled ? "ENABLED" : "DISABLED"));
+            AddComment(g_MLEnabled ? "🤖 Python: ML ACTIVE" : "🤖 Python: ML INACTIVE",
+                      g_MLEnabled ? clrLime : clrGray, PRIORITY_IMPORTANT);
+        }
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Extract value from JSON string (simple parser)                  |
+//+------------------------------------------------------------------+
+string ExtractJSONValue(string json, string key)
+{
+    string search_pattern = "\"" + key + "\":";
+    int pos = StringFind(json, search_pattern);
+
+    if(pos < 0) return "";
+
+    // Move past the key and colon
+    pos += StringLen(search_pattern);
+
+    // Skip whitespace
+    while(pos < StringLen(json) && (StringSubstr(json, pos, 1) == " " || StringSubstr(json, pos, 1) == "\n"))
+        pos++;
+
+    // Extract value
+    string value = "";
+    bool in_quotes = false;
+
+    if(StringSubstr(json, pos, 1) == "\"")
+    {
+        // String value
+        in_quotes = true;
+        pos++;
+        while(pos < StringLen(json))
+        {
+            string ch = StringSubstr(json, pos, 1);
+            if(ch == "\"") break;
+            value += ch;
+            pos++;
+        }
+    }
+    else
+    {
+        // Boolean or number
+        while(pos < StringLen(json))
+        {
+            string ch = StringSubstr(json, pos, 1);
+            if(ch == "," || ch == "}" || ch == "\n" || ch == " ") break;
+            value += ch;
+            pos++;
+        }
+    }
+
+    return value;
+}
+
+//+------------------------------------------------------------------+
+//| Extract nested JSON value (for "filters": {"use_volume": true}) |
+//+------------------------------------------------------------------+
+string ExtractJSONNestedValue(string json, string parent_key, string child_key)
+{
+    // Find parent object
+    string parent_pattern = "\"" + parent_key + "\":";
+    int parent_pos = StringFind(json, parent_pattern);
+
+    if(parent_pos < 0) return "";
+
+    // Find opening brace of parent object
+    int brace_pos = StringFind(json, "{", parent_pos);
+    if(brace_pos < 0) return "";
+
+    // Find closing brace of parent object
+    int depth = 1;
+    int search_pos = brace_pos + 1;
+    int close_brace = -1;
+
+    while(search_pos < StringLen(json) && depth > 0)
+    {
+        string ch = StringSubstr(json, search_pos, 1);
+        if(ch == "{") depth++;
+        else if(ch == "}") depth--;
+
+        if(depth == 0)
+        {
+            close_brace = search_pos;
+            break;
+        }
+        search_pos++;
+    }
+
+    if(close_brace < 0) return "";
+
+    // Extract parent object content
+    string parent_content = StringSubstr(json, brace_pos, close_brace - brace_pos + 1);
+
+    // Now extract child value from parent content
+    return ExtractJSONValue(parent_content, child_key);
 }
 
 //+------------------------------------------------------------------+
