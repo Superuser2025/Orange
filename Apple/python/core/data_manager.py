@@ -7,8 +7,12 @@ from datetime import datetime
 from typing import Optional, Dict, List
 from collections import deque
 import pandas as pd
+import json
+from pathlib import Path
 
 from utils.logger import logger
+from config import IPC_DIR
+from core.ml_trading_system import ml_system
 
 
 class MarketDataBuffer:
@@ -358,8 +362,106 @@ class DataManager:
         """Get account summary"""
         return self.account.copy()
 
+    def run_ml_prediction(self) -> Dict:
+        """
+        Run ML prediction on current market state
+
+        Returns:
+            ML prediction dict with signal, probability, confidence
+        """
+        try:
+            # Prepare market data for ML
+            market_data = {
+                'close': [c.get('close', 0) for c in self.candle_buffer.get_latest(100)],
+                'high': [c.get('high', 0) for c in self.candle_buffer.get_latest(100)],
+                'low': [c.get('low', 0) for c in self.candle_buffer.get_latest(100)],
+                'open': [c.get('open', 0) for c in self.candle_buffer.get_latest(100)],
+                'volume': [c.get('tick_volume', 0) for c in self.candle_buffer.get_latest(100)],
+                'market_structure': self.market_state,
+                'patterns': self.get_active_pattern(),
+                'higher_timeframe': {},  # Could add HTF data here
+                'confluence_score': self.market_state.get('confluence_score', 0),
+                'all_filters_passed': all(self.filter_status.values()),
+                'active_filters_count': sum(1 for v in self.filter_status.values() if v),
+                'session': self.market_state.get('session', 'LONDON'),
+                'regime': self.market_state.get('regime', 'UNKNOWN'),
+                'spread': self.current_price.get('spread', 2.0),
+                'volume_spike': self.market_state.get('volume_spike', False),
+                'signal_type': self.market_state.get('bias', 'NEUTRAL'),  # For BUY/SELL signal
+                'pattern_age': self.get_active_pattern().get('age', 0) if self.get_active_pattern() else 0,
+            }
+
+            # Run prediction
+            prediction = ml_system.predict(market_data)
+
+            # Update ml_data
+            self.ml_data.update({
+                'enabled': ml_system.is_trained,
+                'signal': prediction['signal'],
+                'probability': prediction['probability'],
+                'confidence': prediction['confidence'],
+                'should_trade': prediction['should_trade'],
+                'reason': prediction.get('reason', ''),
+                'sample_count': ml_system.total_predictions
+            })
+
+            # Export to JSON for EA
+            self.export_ml_predictions(prediction)
+
+            return prediction
+
+        except Exception as e:
+            logger.error(f"ML prediction failed: {e}")
+            return {
+                'signal': 'WAIT',
+                'probability': 0.0,
+                'confidence': 0.0,
+                'should_trade': False,
+                'reason': f'Error: {str(e)}'
+            }
+
+    def export_ml_predictions(self, prediction: Dict):
+        """
+        Export ML predictions to JSON file for EA to read
+
+        Args:
+            prediction: ML prediction dictionary
+        """
+        try:
+            ml_predictions_file = IPC_DIR / "ml_predictions.json"
+
+            ml_export = {
+                'timestamp': int(datetime.now().timestamp()),
+                'enabled': ml_system.is_trained,
+                'signal': prediction['signal'],
+                'probability': prediction['probability'],
+                'confidence': prediction['confidence'],
+                'should_trade': prediction['should_trade'],
+                'reason': prediction.get('reason', ''),
+                'model_stats': {
+                    'total_predictions': ml_system.total_predictions,
+                    'win_rate': ml_system.win_rate,
+                    'training_samples': len(ml_system.training_data)
+                }
+            }
+
+            with open(ml_predictions_file, 'w') as f:
+                json.dump(ml_export, f, indent=2)
+
+        except Exception as e:
+            logger.error(f"Failed to export ML predictions: {e}")
+
     def get_ml_status(self) -> Dict:
-        """Get ML status and predictions"""
+        """Get ML status and predictions (now uses real ML!)"""
+        # Update with latest ML system status
+        ml_status = ml_system.get_status()
+        self.ml_data.update({
+            'enabled': ml_status['enabled'],
+            'model_trained': ml_status['model_trained'],
+            'total_predictions': ml_status['total_predictions'],
+            'win_rate': ml_status['win_rate'],
+            'training_samples': ml_status['training_samples']
+        })
         return self.ml_data.copy()
 
     def is_data_fresh(self, max_age_seconds: int = 30) -> bool:
