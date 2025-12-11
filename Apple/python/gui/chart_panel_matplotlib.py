@@ -385,10 +385,14 @@ class ChartPanel(QWidget):
 
             # Calculate 5% padding above/below for better visibility
             self.y_padding = price_range * 0.05 if price_range > 0 else self.price_low * 0.001
+
+            # DEBUG: Log values
+            print(f"[CHART] Candles: {len(self.candle_data)}, Price HIGH={self.price_high:.5f}, LOW={self.price_low:.5f}, RANGE={price_range:.5f}")
         else:
             self.price_high = None
             self.price_low = None
             self.y_padding = 0
+            print("[CHART] WARNING: No highs/lows data!")
 
         # Styling
         self.canvas.axes.set_facecolor('#0A0E27')
@@ -439,8 +443,14 @@ class ChartPanel(QWidget):
         # NOW set Y-axis limits AFTER all overlays are drawn
         # This prevents matplotlib from auto-rescaling when overlays are added
         if self.price_high is not None and self.price_low is not None:
+            y_min = self.price_low - self.y_padding
+            y_max = self.price_high + self.y_padding
+            print(f"[CHART] Setting Y-axis: {y_min:.5f} to {y_max:.5f}")
             self.canvas.axes.autoscale(enable=False, axis='y')
-            self.canvas.axes.set_ylim(self.price_low - self.y_padding, self.price_high + self.y_padding)
+            self.canvas.axes.set_ylim(y_min, y_max)
+            print(f"[CHART] Y-axis set. Actual limits: {self.canvas.axes.get_ylim()}")
+        else:
+            print("[CHART] ERROR: price_high or price_low is None, cannot set Y-axis!")
 
         # Adjust layout with proper margins
         try:
