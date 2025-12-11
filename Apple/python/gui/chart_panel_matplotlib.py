@@ -349,9 +349,6 @@ class ChartPanel(QWidget):
 
         self.canvas.axes.clear()
 
-        # Disable autoscaling immediately after clear to prevent matplotlib from auto-adjusting
-        self.canvas.axes.autoscale(enable=False)
-
         if not self.candle_data:
             return
 
@@ -363,11 +360,6 @@ class ChartPanel(QWidget):
         closes = [c['close'] for c in self.candle_data]
         timestamps = [c.get('timestamp', 0) for c in self.candle_data]
 
-        # Calculate price range for doji minimum height
-        price_high = max(highs) if highs else 1.0
-        price_low = min(lows) if lows else 0.0
-        price_range = price_high - price_low
-
         # Plot candlesticks
         for i, (idx, o, h, l, c) in enumerate(zip(indices, opens, highs, lows, closes)):
             color = '#10B981' if c >= o else '#EF4444'  # Green if bullish, red if bearish
@@ -378,23 +370,19 @@ class ChartPanel(QWidget):
             # Draw body
             body_height = abs(c - o)
             body_bottom = min(o, c)
-
-            # Ensure minimum visible height for doji candles (when open == close)
-            if body_height == 0:
-                # Make doji visible as a thin horizontal line (0.2% of price range)
-                body_height = price_range * 0.002 if price_range > 0 else 0.0001
-
             rect = Rectangle((idx - 0.3, body_bottom), 0.6, body_height,
                            facecolor=color, edgecolor=color)
             self.canvas.axes.add_patch(rect)
 
         # Set Y-axis limits with proper padding for price range
-        if price_range > 0:
-            # Add 5% padding above/below for better visibility
-            padding = price_range * 0.05
+        if highs and lows:
+            price_high = max(highs)
+            price_low = min(lows)
+            price_range = price_high - price_low
 
-            # CRITICAL: Disable autoscaling before setting limits
-            self.canvas.axes.autoscale(enable=False, axis='y')
+            # Add 5% padding above/below for better visibility
+            padding = price_range * 0.05 if price_range > 0 else price_low * 0.001
+
             self.canvas.axes.set_ylim(price_low - padding, price_high + padding)
 
         # Styling
@@ -450,44 +438,6 @@ class ChartPanel(QWidget):
             pass  # Ignore layout warnings
 
         self.canvas.draw()
-
-    def is_data_stale(self):
-        """Check if candle data is stale/outdated compared to current price"""
-        if not self.candle_data:
-            return True
-
-        try:
-            # Get current price
-            price_data = data_manager.get_latest_price()
-            current_price = (price_data.get('bid', 0) + price_data.get('ask', 0)) / 2
-
-            if current_price == 0:
-                return False  # Can't determine, assume data is okay
-
-            # Check if current price is way outside the range of our candles
-            candle_highs = [c['high'] for c in self.candle_data]
-            candle_lows = [c['low'] for c in self.candle_data]
-
-            if not candle_highs or not candle_lows:
-                return True
-
-            chart_high = max(candle_highs)
-            chart_low = min(candle_lows)
-            chart_range = chart_high - chart_low
-
-            # If current price is more than 50% outside chart range, data is stale
-            if current_price > chart_high + (chart_range * 0.5):
-                logger.warning(f"Data stale: price {current_price} >> chart high {chart_high}")
-                return True
-            if current_price < chart_low - (chart_range * 0.5):
-                logger.warning(f"Data stale: price {current_price} << chart low {chart_low}")
-                return True
-
-            return False
-
-        except Exception as e:
-            logger.debug(f"Could not check data staleness: {e}")
-            return False
 
     def update_last_candle_only(self):
         """Update only the last (forming) candle with current price"""
@@ -635,24 +585,15 @@ class ChartPanel(QWidget):
         )
 
     def update_chart(self):
-        """Update chart with latest price"""
+        """Update chart with latest price (only updates last candle, no reload)"""
 
         try:
             # Skip update if we're currently loading new data (symbol/timeframe change)
             if self.is_loading:
                 return
 
-            # Check if we have candle data - if not or if data seems stale, reload
-            if not self.candle_data or self.is_data_stale():
-                # Reload from MT5 or live data
-                if self.mt5_initialized:
-                    self.load_historical_data()
-                else:
-                    self.candle_data = []
-                    for _ in range(50):  # Create 50 candles from live data
-                        self.get_live_mt5_data()
-
             # Update only the last candle with current price
+            # DO NOT reload all 100 candles - that causes the "morphing" issue!
             self.update_last_candle_only()
 
             if self.candle_data:
