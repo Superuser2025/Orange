@@ -451,6 +451,44 @@ class ChartPanel(QWidget):
 
         self.canvas.draw()
 
+    def is_data_stale(self):
+        """Check if candle data is stale/outdated compared to current price"""
+        if not self.candle_data:
+            return True
+
+        try:
+            # Get current price
+            price_data = data_manager.get_latest_price()
+            current_price = (price_data.get('bid', 0) + price_data.get('ask', 0)) / 2
+
+            if current_price == 0:
+                return False  # Can't determine, assume data is okay
+
+            # Check if current price is way outside the range of our candles
+            candle_highs = [c['high'] for c in self.candle_data]
+            candle_lows = [c['low'] for c in self.candle_data]
+
+            if not candle_highs or not candle_lows:
+                return True
+
+            chart_high = max(candle_highs)
+            chart_low = min(candle_lows)
+            chart_range = chart_high - chart_low
+
+            # If current price is more than 50% outside chart range, data is stale
+            if current_price > chart_high + (chart_range * 0.5):
+                logger.warning(f"Data stale: price {current_price} >> chart high {chart_high}")
+                return True
+            if current_price < chart_low - (chart_range * 0.5):
+                logger.warning(f"Data stale: price {current_price} << chart low {chart_low}")
+                return True
+
+            return False
+
+        except Exception as e:
+            logger.debug(f"Could not check data staleness: {e}")
+            return False
+
     def update_last_candle_only(self):
         """Update only the last (forming) candle with current price"""
         if not self.candle_data:
@@ -597,15 +635,24 @@ class ChartPanel(QWidget):
         )
 
     def update_chart(self):
-        """Update chart with latest price (only updates last candle, no reload)"""
+        """Update chart with latest price"""
 
         try:
             # Skip update if we're currently loading new data (symbol/timeframe change)
             if self.is_loading:
                 return
 
+            # Check if we have candle data - if not or if data seems stale, reload
+            if not self.candle_data or self.is_data_stale():
+                # Reload from MT5 or live data
+                if self.mt5_initialized:
+                    self.load_historical_data()
+                else:
+                    self.candle_data = []
+                    for _ in range(50):  # Create 50 candles from live data
+                        self.get_live_mt5_data()
+
             # Update only the last candle with current price
-            # DO NOT reload all 100 candles - that causes the "morphing" issue!
             self.update_last_candle_only()
 
             if self.candle_data:
