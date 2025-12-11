@@ -349,6 +349,9 @@ class ChartPanel(QWidget):
 
         self.canvas.axes.clear()
 
+        # Disable autoscaling immediately after clear to prevent matplotlib from auto-adjusting
+        self.canvas.axes.autoscale(enable=False)
+
         if not self.candle_data:
             return
 
@@ -390,6 +393,8 @@ class ChartPanel(QWidget):
             # Add 5% padding above/below for better visibility
             padding = price_range * 0.05
 
+            # CRITICAL: Disable autoscaling before setting limits
+            self.canvas.axes.autoscale(enable=False, axis='y')
             self.canvas.axes.set_ylim(price_low - padding, price_high + padding)
 
         # Styling
