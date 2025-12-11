@@ -377,18 +377,18 @@ class ChartPanel(QWidget):
                            facecolor=color, edgecolor=color)
             self.canvas.axes.add_patch(rect)
 
-        # Set Y-axis limits with proper padding for price range
+        # Calculate Y-axis limits (but don't set yet - overlays need to be drawn first)
         if highs and lows:
-            price_high = max(highs)
-            price_low = min(lows)
-            price_range = price_high - price_low
+            self.price_high = max(highs)
+            self.price_low = min(lows)
+            price_range = self.price_high - self.price_low
 
-            # Add 5% padding above/below for better visibility
-            padding = price_range * 0.05 if price_range > 0 else price_low * 0.001
-
-            # Force matplotlib to use our Y-axis limits (disable autoscale for Y-axis only)
-            self.canvas.axes.autoscale(enable=False, axis='y')
-            self.canvas.axes.set_ylim(price_low - padding, price_high + padding)
+            # Calculate 5% padding above/below for better visibility
+            self.y_padding = price_range * 0.05 if price_range > 0 else self.price_low * 0.001
+        else:
+            self.price_high = None
+            self.price_low = None
+            self.y_padding = 0
 
         # Styling
         self.canvas.axes.set_facecolor('#0A0E27')
@@ -435,6 +435,12 @@ class ChartPanel(QWidget):
 
         # Draw institutional overlays (FVG, OB, Liquidity)
         self.draw_chart_overlays()
+
+        # NOW set Y-axis limits AFTER all overlays are drawn
+        # This prevents matplotlib from auto-rescaling when overlays are added
+        if self.price_high is not None and self.price_low is not None:
+            self.canvas.axes.autoscale(enable=False, axis='y')
+            self.canvas.axes.set_ylim(self.price_low - self.y_padding, self.price_high + self.y_padding)
 
         # Adjust layout with proper margins
         try:
