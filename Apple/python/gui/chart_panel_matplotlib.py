@@ -352,6 +352,9 @@ class ChartPanel(QWidget):
         if not self.candle_data:
             return
 
+        # CRITICAL: Disable matplotlib autoscaling - we set Y-axis manually
+        self.canvas.axes.autoscale(enable=False)
+
         # Extract data (use indices for plotting positions)
         indices = list(range(len(self.candle_data)))
         opens = [c['open'] for c in self.candle_data]
@@ -383,6 +386,8 @@ class ChartPanel(QWidget):
             # Add 5% padding above/below for better visibility
             padding = price_range * 0.05 if price_range > 0 else price_low * 0.001
 
+            # Force matplotlib to use our Y-axis limits (disable autoscale for Y-axis only)
+            self.canvas.axes.autoscale(enable=False, axis='y')
             self.canvas.axes.set_ylim(price_low - padding, price_high + padding)
 
         # Styling
