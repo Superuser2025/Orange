@@ -360,6 +360,11 @@ class ChartPanel(QWidget):
         closes = [c['close'] for c in self.candle_data]
         timestamps = [c.get('timestamp', 0) for c in self.candle_data]
 
+        # Calculate price range for doji minimum height
+        price_high = max(highs) if highs else 1.0
+        price_low = min(lows) if lows else 0.0
+        price_range = price_high - price_low
+
         # Plot candlesticks
         for i, (idx, o, h, l, c) in enumerate(zip(indices, opens, highs, lows, closes)):
             color = '#10B981' if c >= o else '#EF4444'  # Green if bullish, red if bearish
@@ -370,18 +375,20 @@ class ChartPanel(QWidget):
             # Draw body
             body_height = abs(c - o)
             body_bottom = min(o, c)
+
+            # Ensure minimum visible height for doji candles (when open == close)
+            if body_height == 0:
+                # Make doji visible as a thin horizontal line (0.2% of price range)
+                body_height = price_range * 0.002 if price_range > 0 else 0.0001
+
             rect = Rectangle((idx - 0.3, body_bottom), 0.6, body_height,
                            facecolor=color, edgecolor=color)
             self.canvas.axes.add_patch(rect)
 
         # Set Y-axis limits with proper padding for price range
-        if highs and lows:
-            price_high = max(highs)
-            price_low = min(lows)
-            price_range = price_high - price_low
-
+        if price_range > 0:
             # Add 5% padding above/below for better visibility
-            padding = price_range * 0.05 if price_range > 0 else price_low * 0.001
+            padding = price_range * 0.05
 
             self.canvas.axes.set_ylim(price_low - padding, price_high + padding)
 
